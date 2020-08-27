@@ -10,5 +10,8 @@
   "scripts": {},
   "devDependencies": {
     "typescript": "4.0.2"
+  },
+  "peerDependencies": {
+    "react": "16.9.0"
   }
 }
