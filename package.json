@@ -6,6 +6,7 @@
   "repository": "https://github.com/derived-studio/react-notifier",
   "author": "Mark Bevels <mark.bevels@derived.studio>",
   "license": "MIT",
+  "private": true,
   "scripts": {},
   "devDependencies": {
     "typescript": "4.0.2"
