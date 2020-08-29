@@ -56,3 +56,13 @@ const notification = createNotification({ message: 'hello',  duration: 2000, onR
 store.dispatch(addNotification(notification))
 
 ```
+
+### Shorthand version
+
+```
+import { createState, createStore, createNotification } @derived/react-notifier
+const store = createStore(createState())
+
+// you don't need to call createNotification function
+store.dispatch(addNotification({ message: 'hello',  duration: 2000 }))
+```
