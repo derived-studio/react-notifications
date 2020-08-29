@@ -16,18 +16,43 @@
 
 ## Usage concept
 
-```
-import { createState, createStore, createNotification } @derived/react-notifier/helpers
+### With defined id and programmatic removal
 
+```
+import { createState, createStore, createNotification } @derived/react-notifier
 
 const store = createStore(createState())
-
-// with defined id
 const id = 'test-id'
-const notification = createNotification({ id, message: 'hello' })
+const notification = createNotification({ id, message: 'hello', remove })
 store.dispatch(addNotification(notification))
+
 setTimeout(() => {
     store.dispatch(removeNotification(id))
 }, 1000)
+
+```
+
+### With duration
+
+```
+import { createState, createStore, createNotification } @derived/react-notifier
+
+const store = createStore(createState())
+
+const notification = createNotification({ message: 'hello',  duration: 2000 })
+store.dispatch(addNotification(notification))
+
+```
+
+### With duration adn onRemove callback
+
+```
+import { createState, createStore, createNotification } @derived/react-notifier
+
+const store = createStore(createState())
+
+const onRemove = (notification) => console.log('Notification removed', notification)
+const notification = createNotification({ message: 'hello',  duration: 2000, onRemove })
+store.dispatch(addNotification(notification))
 
 ```
