@@ -14,9 +14,18 @@ export interface INotification {
 }
 
 
+export interface INotificationState { 
+    readonly created: number
+    readonly removed: number
+    readonly active: number
+    readonly activeIds: string[]
+    readonly paused: boolean    
+}
+
 export interface INotificationStore {
     createNotification: (notification: Partial<INotification>) => INotification
     removeNotification: (id: string) => void
-    removeAllNotifications: () => void    
+    removeAllNotifications: () => void
+    getState: () => INotificationState
 }
 
