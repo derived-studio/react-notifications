@@ -13,7 +13,6 @@ export interface INotification {
     readonly type: string
 }
 
-
 export interface INotificationState { 
     readonly created: number
     readonly removed: number
@@ -28,4 +27,3 @@ export interface INotificationStore {
     removeAllNotifications: () => void
     getState: () => INotificationState
 }
-
