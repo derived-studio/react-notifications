@@ -1,8 +1,10 @@
-export const printWidth = 120
-export const jsxBracketSameLine = false
-export const quoteProps = 'consistent'
-export const singleQuote = true
-export const semi = false
-export const tabWidth = 2
-export const trailingComma = 'none'
-export const useTabs = false
+module.exports = {
+  printWidth: 120,
+  jsxBracketSameLine: false,
+  quoteProps: 'consistent',
+  singleQuote: true,
+  semi: false,
+  tabWidth: 2,
+  trailingComma: 'none',
+  useTabs: false
+}
