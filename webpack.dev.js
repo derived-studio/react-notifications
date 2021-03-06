@@ -45,24 +45,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/
-      },
-      {
-        test: /\.(js|jsx)$/,
-        use: ['eslint-loader'],
-        include: /samples/
       }
-      // {
-      //   test: /\.(css|scss)$/,
-      //   use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }]
-      // },
-      // {
-      //   test: /\.(png|svg|jpg|gif)$/,
-      //   use: ['file-loader']
-      // },
-      // {
-      //   test: /\.(woff|woff2|eot|ttf|otf)$/,
-      //   use: ['file-loader']
-      // }
     ]
   },
 
