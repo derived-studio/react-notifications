@@ -6,28 +6,22 @@ import { createTestNotification } from './notification.mocks'
 
 describe('Notification container', () => {
   it('renders empty by default', () => {
-    const notificationOne = createTestNotification({
-      id: 'notification-one',
-      message: 'First notification'
-    })
-
-    const notificationTwo = createTestNotification({
-      id: 'notification-two',
-      message: 'Second notification',
-      type: NotificationType.Warning
-    })
-
-    const notificationThree = createTestNotification({
-      id: 'notification-three',
-      message: 'Third notification',
-      type: NotificationType.Warning
-    })
-
-    const notifications = {
-      [notificationOne.id]: notificationOne,
-      [notificationTwo.id]: notificationTwo,
-      [notificationThree.id]: notificationThree
-    }
+    const notifications = [
+      createTestNotification({
+        id: 'notification-one',
+        message: 'First notification'
+      }),
+      createTestNotification({
+        id: 'notification-two',
+        message: 'Second notification',
+        type: NotificationType.Warning
+      }),
+      createTestNotification({
+        id: 'notification-three',
+        message: 'Third notification',
+        type: NotificationType.Warning
+      })
+    ]
 
     const { getByText } = render(<Container {...{ notifications }} />)
 

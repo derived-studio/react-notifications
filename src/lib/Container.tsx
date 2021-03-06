@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { INotification } from './Notification'
 
 export type ContainerProps = {
-  notifications: {
-    [id: string]: INotification
-  }
+  notifications: INotification[]
 }
 
 export class Container extends Component<ContainerProps> {
@@ -21,7 +19,6 @@ export class Container extends Component<ContainerProps> {
   }
 
   render() {
-    const { notifications } = this.props
-    return <div className="notification-container">{Object.values(notifications).map(this.renderNotification)}</div>
+    return <div className="notification-container">{this.props.notifications.map(this.renderNotification)}</div>
   }
 }
