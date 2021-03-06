@@ -1,9 +1,9 @@
 {
-  "name": "react-notifier",
+  "name": "@derived/react-notifications",
   "version": "0.1.0",
   "description": "Notification component for react apps.",
   "main": "index.js",
-  "repository": "https://github.com/derived-studio/react-notifier",
+  "repository": "https://github.com/derived-studio/react-notifications",
   "author": "Mark Bevels <mark.bevels@derived.studio>",
   "license": "MIT",
   "private": true,
