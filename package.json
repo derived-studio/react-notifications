@@ -9,10 +9,10 @@
   "private": true,
   "scripts": {},
   "devDependencies": {
-    "typescript": "4.0.2",
+    "typescript": "^4.2.3",
     "webpack": "^5.24.3"
   },
   "peerDependencies": {
-    "react": "16.9.0"
+    "react": "^17.0.1"
   }
 }
