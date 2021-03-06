@@ -27,8 +27,7 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        exclude: /node_modules/,
+      {        
         test: /\.(j|t)sx?$/,
         use: [
           {
@@ -39,12 +38,29 @@ module.exports = {
               plugins: ['@babel/plugin-proposal-optional-chaining']
             }
           }
-        ]
+        ],
+        include: /src/
       },
       {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
-        exclude: /node_modules/
+        include: /src/
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [          
+          "style-loader", // Creates `style` nodes from JS strings          
+          {
+            // Translates CSS into CommonJS          
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              sourceMap: true
+            }
+          }, 
+          "sass-loader", // Compiles Sass to CSS
+        ],
+        include: /src/
       }
     ]
   },

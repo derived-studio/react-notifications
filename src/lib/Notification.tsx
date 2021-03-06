@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react'
+import './notification.scss'
 
 export enum NotificationType {
   Default = '',
