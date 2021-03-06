@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 export enum NotificationType {
-  Success = 'success',
-  Danger = 'danger',
+  Default = '',
   Info = 'info',
-  Default = 'default',
+  Error = 'error',
+  Success = 'success',
   Warning = 'warning'
 }
 
@@ -17,11 +17,13 @@ export interface INotification {
 
 export type NotificationProps = {
   message: string
+  type: string
 }
 
 export class Notification extends Component<NotificationProps> {
   render() {
-    const { message } = this.props
-    return <div>{message}</div>
+    const { message, type = NotificationType.Default } = this.props
+    const className = `notification ${type}`.trimRight()
+    return <div className={className}>{message}</div>
   }
 }
