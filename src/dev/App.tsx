@@ -1,5 +1,6 @@
 import React from 'react'
+import { Notification } from '../lib/Notification'
 
 export function App() {
-  return <div>App is up!</div>
+  return <Notification />
 }
