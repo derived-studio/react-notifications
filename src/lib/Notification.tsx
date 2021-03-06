@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 
 export enum NotificationType {
   Default = '',
@@ -21,7 +21,7 @@ export type NotificationProps = {
 }
 
 export class Notification extends Component<NotificationProps> {
-  render() {
+  render(): ReactNode {
     const { message, type = NotificationType.Default } = this.props
     const className = `notification ${type}`.trimRight()
     return <div className={className}>{message}</div>

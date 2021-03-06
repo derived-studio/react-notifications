@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import { INotification } from './Notification'
 
 export type ContainerProps = {
@@ -10,7 +10,7 @@ export class Container extends Component<ContainerProps> {
     super(props)
   }
 
-  renderNotification({ id, message }: INotification) {
+  renderNotification({ id, message }: INotification): ReactNode {
     return (
       <div key={id} className="notification">
         {message}
@@ -18,7 +18,7 @@ export class Container extends Component<ContainerProps> {
     )
   }
 
-  render() {
+  render(): ReactNode {
     return <div className="notification-container">{this.props.notifications.map(this.renderNotification)}</div>
   }
 }
