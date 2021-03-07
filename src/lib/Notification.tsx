@@ -14,17 +14,40 @@ export interface INotification {
   readonly message: string
   readonly created: number
   readonly type: NotificationType
+  readonly progress: number
 }
 
 export type NotificationProps = {
-  message: string
   type: string
+  progress: number
+  icon?: string
 }
 
 export class Notification extends Component<NotificationProps> {
+  private isNumber(val: unknown): val is number {
+    return true
+  }
+
   render(): ReactNode {
-    const { message, type = NotificationType.Default } = this.props
-    const className = `notification ${type}`.trimRight()
-    return <div className={className}>{message}</div>
+    const { progress, children, icon, type = NotificationType.Default } = this.props
+    return (
+      <div className={`notification ${type}`.trimRight()}>
+        <div className="content">
+          <div className="body">
+            {children} - {progress}%
+          </div>
+          {this.isNumber(progress) && (
+            <div className="progress">
+              <div style={{ width: `${progress * 100}%` }}></div>
+            </div>
+          )}
+        </div>
+        {icon && (
+          <div className="icon">
+            <img className="glyph" src="" />
+          </div>
+        )}
+      </div>
+    )
   }
 }

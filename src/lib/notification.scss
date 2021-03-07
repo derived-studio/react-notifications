@@ -1,5 +1,59 @@
+$iconSize: 32px;
+
 .notification {
-  border: 1px solid #dedede;
-  padding: 2px;
+  width: 200px;
   font-size: 1em;
+  clear: both;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 2px;
+
+  > .icon {
+    background-color: #dedede;
+    position: relative;
+    right: 0;
+    width: $iconSize;
+    height: $iconSize;
+    min-height: $iconSize;
+    min-width: $iconSize;
+    max-height: $iconSize;
+    max-width: $iconSize;
+    border-radius: 8px;
+    flex: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    > .glyph {
+      border: 1px solid #de2222;
+    }
+  }
+
+  > .content {
+    position: relative;
+    margin: 0;
+    flex: 1;
+    background-color: #dedede;
+    // border: 1px solid #ababab;
+    transform: translateX(10px);
+    border-radius: 8px;
+
+    > .progress {
+      display: flex;
+      justify-content: flex-end;
+      > div {
+        background-color: blue;
+        height: 2px;
+      }
+    }
+    > .body {
+      padding: 4px 20px;
+      font-size: 0.9em;
+      text-align: right;
+    }
+  }
 }

@@ -1,8 +1,9 @@
 import React, { Component, ReactNode } from 'react'
-import { INotification } from './Notification'
+import { INotification, Notification } from './Notification'
 
 export type ContainerProps = {
   notifications: INotification[]
+  className?: string
 }
 
 export class Container extends Component<ContainerProps> {
@@ -10,15 +11,21 @@ export class Container extends Component<ContainerProps> {
     super(props)
   }
 
-  renderNotification({ id, message }: INotification): ReactNode {
+  renderNotification({ id, message, type, progress }: INotification): ReactNode {
     return (
-      <div key={id} className="notification">
+      <Notification key={id} type={type} progress={progress} icon={'src'}>
         {message}
-      </div>
+      </Notification>
     )
   }
 
   render(): ReactNode {
-    return <div className="notification-container">{this.props.notifications.map(this.renderNotification)}</div>
+    const { className } = this.props
+
+    return (
+      <div className={`notification-container ${className}`.trim()}>
+        {this.props.notifications.map(this.renderNotification)}
+      </div>
+    )
   }
 }

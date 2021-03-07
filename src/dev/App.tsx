@@ -3,10 +3,12 @@ import { Container } from '../lib/Container'
 import { createTestNotification } from '../lib/notification.mocks'
 
 export function App(): JSX.Element {
-  const notifications = [
-    createTestNotification({ id: 'notification-one', message: 'I am second' }),
-    createTestNotification({ id: 'notification-two', message: 'I am second' })
-  ]
+  const elements = 20
+  const notifications = [...Array(elements)].map((_, i) => {
+    const id = `${i}`
+    const progress = i / elements
+    return createTestNotification({ id: 'notification-two', message: `msg: ${i + 1}`, progress })
+  })
 
   return <Container notifications={notifications} />
 }
