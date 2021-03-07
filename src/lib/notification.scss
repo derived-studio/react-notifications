@@ -77,10 +77,6 @@ $borderRadius: 6px;
     align-items: center;
     justify-content: center;
     border: $border;
-
-    > .glyph {
-      border: 1px solid #de2222;
-    }
   }
 
   > .content {
@@ -101,7 +97,6 @@ $borderRadius: 6px;
       > div {
         background-color: $progress;
         height: $progressHeight;
-        // margin-bottom: 1px;
       }
     }
 
