@@ -9,6 +9,7 @@
   "scripts": {
     "test": "yarn jest",
     "dev": "webpack serve --config ./webpack.dev.js --progress --profile",
+    "clean": "rimraf ./dist",
     "build:types": "yarn tsc --p tsconfig.json --declaration --declarationDir ./dist --outDir dist --emitDeclarationOnly",
     "build:lib": "webpack --config ./webpack.prod.js --progress --profile",
     "build": "yarn build:types && yarn build:lib"
@@ -39,6 +40,7 @@
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
