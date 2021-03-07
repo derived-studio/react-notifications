@@ -1,6 +1,8 @@
 import React, { Component, ReactNode } from 'react'
 import { INotification, Notification } from './Notification'
 
+import './container.scss'
+
 export type ContainerProps = {
   notifications: INotification[]
   className?: string
@@ -20,10 +22,10 @@ export class Container extends Component<ContainerProps> {
   }
 
   render(): ReactNode {
-    const { className } = this.props
+    const { className = '' } = this.props
 
     return (
-      <div className={`notification-container ${className}`.trim()}>
+      <div className={`notification-container fixed ${className}`.trim()}>
         {this.props.notifications.map(this.renderNotification)}
       </div>
     )

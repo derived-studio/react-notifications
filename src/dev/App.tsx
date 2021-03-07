@@ -21,5 +21,5 @@ export function App(): JSX.Element {
     return createTestNotification({ id, message: `msg: ${i + 1}`, progress, type })
   })
 
-  return <Container notifications={notifications} />
+  return <Container notifications={notifications} className="top right" />
 }
