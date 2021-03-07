@@ -18,21 +18,34 @@ export interface INotification {
 }
 
 export type NotificationProps = {
+  id: string
   type?: string
   progress?: number
   icon?: string
   children: ReactNode
+  onClick?: (id: string) => void
 }
 
 export class Notification extends Component<NotificationProps> {
+  constructor(props: NotificationProps) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
   private isNumber(val: unknown): val is number {
     return true
+  }
+
+  handleClick(): void {
+    if (this.props.onClick) {
+      this.props.onClick(this.props.id)
+    }
   }
 
   render(): ReactNode {
     const { progress, children, icon, type } = this.props
     return (
-      <div className={`notification ${type}`.trimRight()}>
+      <div className={`notification ${type}`.trimRight()} onClick={this.handleClick}>
         <div className="content">
           <div className="body">{children}</div>
           {this.isNumber(progress) && (
