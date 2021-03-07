@@ -18,9 +18,10 @@ export interface INotification {
 }
 
 export type NotificationProps = {
-  type: string
-  progress: number
+  type?: string
+  progress?: number
   icon?: string
+  children: ReactNode
 }
 
 export class Notification extends Component<NotificationProps> {
@@ -33,9 +34,7 @@ export class Notification extends Component<NotificationProps> {
     return (
       <div className={`notification ${type}`.trimRight()}>
         <div className="content">
-          <div className="body">
-            {children} - {progress}%
-          </div>
+          <div className="body">{children}</div>
           {this.isNumber(progress) && (
             <div className="progress">
               <div style={{ width: `${progress * 100}%` }}></div>

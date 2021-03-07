@@ -6,15 +6,18 @@ import { createTestNotification } from './notification.mocks'
 describe('Notification', () => {
   it('renders with message', () => {
     const message = 'Test notification message'
-    const { getByText } = render(<Notification {...createTestNotification({ message })} />)
+    const { getByText } = render(<Notification>{message}</Notification>)
     expect(getByText(message)).toBeInTheDocument()
   })
 
-  it('has notification class', () => {
+  it('renders notification styles', () => {
     const id = 'test-id'
     const message = 'test notification'
-    const { getByText } = render(<Notification {...createTestNotification({ id, message })} />)
-    expect(getByText(message)).toHaveClass('notification')
+    const { getByText } = render(<Notification>{message}</Notification>)
+    const body = getByText(message)
+    expect(body).toHaveClass('body')
+    expect(body.parentElement).toHaveClass('content')
+    expect(body.parentElement.parentElement).toHaveClass('notification')
   })
 
   it.each([
@@ -26,7 +29,7 @@ describe('Notification', () => {
   ])('renders with type class', (type: NotificationType, className: string): void => {
     const id = `test-${type}-id`
     const message = `Test ${type ? type : 'default'} notification`
-    const { getByText } = render(<Notification {...createTestNotification({ id, message, type })} />)
-    expect(getByText(message)).toHaveClass(`notification ${className}`.trimRight())
+    const { getByText } = render(<Notification type={type}>{message}</Notification>)
+    expect(getByText(message).parentElement.parentElement).toHaveClass(`notification ${className}`.trimRight())
   })
 })

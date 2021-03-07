@@ -28,7 +28,6 @@ describe('Notification container', () => {
     Object.values(notifications).forEach(({ message }) => {
       const notification = getByText(message)
       expect(notification).toBeInTheDocument()
-      expect(notification).toHaveClass('notification')
     })
   })
 })
