@@ -24,9 +24,29 @@ $awesomeHover: #685dc3 !default;
 $color: #ffffffaa !default;
 $progress: #ffffff !default;
 $progressBar: #ffffff55 !default;
-$progressHeight: 2px;
+$progressHeight: 4px;
 
+$border: 2px solid #ffffff55;
 $borderRadius: 6px;
+
+@mixin typeStyle($type, $color, $colorHover) {
+  &.#{$type} {
+    > .icon {
+      background-color: $color;
+    }
+    > .content {
+      background-color: $color;
+    }
+    &:hover {
+      > .icon {
+        background-color: $colorHover;
+      }
+      > .content {
+        background-color: $colorHover;
+      }
+    }
+  }
+}
 
 .notification {
   width: 200px;
@@ -56,6 +76,7 @@ $borderRadius: 6px;
     align-content: center;
     align-items: center;
     justify-content: center;
+    border: $border;
 
     > .glyph {
       border: 1px solid #de2222;
@@ -67,7 +88,7 @@ $borderRadius: 6px;
     margin: 0;
     flex: 1;
     background-color: $default;
-    // border: 1px solid #ababab;
+    border: $border;
     transform: translateX(10px);
     border-radius: $borderRadius;
     overflow: hidden;
@@ -80,9 +101,10 @@ $borderRadius: 6px;
       > div {
         background-color: $progress;
         height: $progressHeight;
-        margin-bottom: 1px;
+        // margin-bottom: 1px;
       }
     }
+
     > .body {
       color: $color;
       padding: 4px 20px;
@@ -91,88 +113,9 @@ $borderRadius: 6px;
     }
   }
 
-  &.default {
-    > .icon {
-      background-color: $default;
-    }
-    > .content {
-      background-color: $default;
-    }
-    &:hover {
-      > .icon {
-        background-color: $defaultHover;
-      }
-      > .content {
-        background-color: $defaultHover;
-      }
-    }
-  }
-
-  &.error {
-    > .icon {
-      background-color: $error;
-    }
-    > .content {
-      background-color: $error;
-    }
-    &:hover {
-      > .icon {
-        background-color: $errorHover;
-      }
-      > .content {
-        background-color: $errorHover;
-      }
-    }
-  }
-
-  &.info {
-    > .icon {
-      background-color: $info;
-    }
-    > .content {
-      background-color: $info;
-    }
-    &:hover {
-      > .icon {
-        background-color: $infoHover;
-      }
-      > .content {
-        background-color: $infoHover;
-      }
-    }
-  }
-
-  &.success {
-    > .icon {
-      background-color: $success;
-    }
-    > .content {
-      background-color: $success;
-    }
-    &:hover {
-      > .icon {
-        background-color: $successHover;
-      }
-      > .content {
-        background-color: $successHover;
-      }
-    }
-  }
-
-  &.warning {
-    > .icon {
-      background-color: $warning;
-    }
-    > .content {
-      background-color: $warning;
-    }
-    &:hover {
-      > .icon {
-        background-color: $warningHover;
-      }
-      > .content {
-        background-color: $warningHover;
-      }
-    }
-  }
+  @include typeStyle('default', $default, $defaultHover);
+  @include typeStyle('info', $info, $infoHover);
+  @include typeStyle('error', $error, $errorHover);
+  @include typeStyle('success', $success, $successHover);
+  @include typeStyle('warning', $warning, $warningHover);
 }
