@@ -29,7 +29,7 @@ export class Notification extends Component<NotificationProps> {
   }
 
   render(): ReactNode {
-    const { progress, children, icon, type = NotificationType.Default } = this.props
+    const { progress, children, icon, type } = this.props
     return (
       <div className={`notification ${type}`.trimRight()}>
         <div className="content">

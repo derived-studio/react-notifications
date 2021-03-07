@@ -1,5 +1,33 @@
 $iconSize: 32px;
 
+$default: #708ba8 !default;
+$defaultHover: #88a2bd !default;
+
+$info: #2774c5 !default;
+$infoHover: #3280d3 !default;
+
+$success: #1f8838 !default;
+$successHover: #28a745 !default;
+
+$error: #a82933 !default;
+$errorHover: #bd3a44 !default;
+
+$info: #138b9e !default;
+$infoHover: #17a2b8 !default;
+
+$warning: #b49432 !default;
+$warningHover: #c09f3c !default;
+
+$awesome: #4c3fb1 !default;
+$awesomeHover: #685dc3 !default;
+
+$color: #ffffffaa !default;
+$progress: #ffffff !default;
+$progressBar: #ffffff55 !default;
+$progressHeight: 2px;
+
+$borderRadius: 6px;
+
 .notification {
   width: 200px;
   font-size: 1em;
@@ -8,9 +36,10 @@ $iconSize: 32px;
   align-items: center;
   align-content: center;
   margin: 2px;
+  cursor: pointer;
 
   > .icon {
-    background-color: #dedede;
+    background-color: $default;
     position: relative;
     right: 0;
     width: $iconSize;
@@ -19,7 +48,7 @@ $iconSize: 32px;
     min-width: $iconSize;
     max-height: $iconSize;
     max-width: $iconSize;
-    border-radius: 8px;
+    border-radius: $borderRadius;
     flex: 0;
     width: 32px;
     height: 32px;
@@ -37,23 +66,96 @@ $iconSize: 32px;
     position: relative;
     margin: 0;
     flex: 1;
-    background-color: #dedede;
+    background-color: $default;
     // border: 1px solid #ababab;
     transform: translateX(10px);
-    border-radius: 8px;
+    border-radius: $borderRadius;
+    overflow: hidden;
 
     > .progress {
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
+      background-color: $progressBar;
+
       > div {
-        background-color: blue;
-        height: 2px;
+        background-color: $progress;
+        height: $progressHeight;
+        margin-bottom: 1px;
       }
     }
     > .body {
+      color: $color;
       padding: 4px 20px;
       font-size: 0.9em;
       text-align: right;
+    }
+  }
+
+  &.error {
+    > .icon {
+      background-color: $error;
+    }
+    > .content {
+      background-color: $error;
+    }
+    &:hover {
+      > .icon {
+        background-color: $errorHover;
+      }
+      > .content {
+        background-color: $errorHover;
+      }
+    }
+  }
+
+  &.info {
+    > .icon {
+      background-color: $info;
+    }
+    > .content {
+      background-color: $info;
+    }
+    &:hover {
+      > .icon {
+        background-color: $infoHover;
+      }
+      > .content {
+        background-color: $infoHover;
+      }
+    }
+  }
+
+  &.success {
+    > .icon {
+      background-color: $success;
+    }
+    > .content {
+      background-color: $success;
+    }
+    &:hover {
+      > .icon {
+        background-color: $successHover;
+      }
+      > .content {
+        background-color: $successHover;
+      }
+    }
+  }
+
+  &.warning {
+    > .icon {
+      background-color: $warning;
+    }
+    > .content {
+      background-color: $warning;
+    }
+    &:hover {
+      > .icon {
+        background-color: $warningHover;
+      }
+      > .content {
+        background-color: $warningHover;
+      }
     }
   }
 }
