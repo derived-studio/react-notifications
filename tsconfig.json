@@ -1,4 +1,7 @@
 {
+  "basePath": "./",
+  "strict": true,
+  "typeRoots": ["node_modules/@types"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

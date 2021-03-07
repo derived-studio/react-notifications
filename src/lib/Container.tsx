@@ -4,8 +4,8 @@ import { INotification, Notification } from './Notification'
 import './container.scss'
 
 export type ContainerProps = {
-  notifications: INotification[]
   className?: string
+  notifications: INotification[]
 }
 
 export class Container extends Component<ContainerProps> {
