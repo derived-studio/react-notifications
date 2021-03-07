@@ -1,22 +1,17 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
+// const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
-  entry: './src/lib/index.tsx',
-  devtool: 'cheap-module-source-map',
+  mode: 'production',
+  entry: './src/lib/index.ts',
+  devtool: 'source-map',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
-
-  devServer: {
-    open: true,
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true
+    filename: 'react-notifications.min.js',
+    library: 'reactNotifications',
+    libraryTarget: 'commonjs2'
   },
 
   resolve: {
@@ -64,13 +59,24 @@ module.exports = {
   },
 
   plugins: [
-    new ESLintPlugin({ emitError: true, emitWarning: true, outputReport: true, files: 'src/**' }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: './src/dev/index.html'
-    }),
+    // new ESLintPlugin({ emitError: true, emitWarning: true, outputReport: true, files: 'src/**' }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('production')
     })
-  ]
+  ],
+
+  externals: {
+    'react': {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React'
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: 'ReactDOM'
+    }
+  }
 }
