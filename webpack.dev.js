@@ -5,7 +5,7 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/lib/index.tsx',
+  entry: './src/dev/index.tsx',
   devtool: 'cheap-module-source-map',
 
   output: {

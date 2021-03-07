@@ -2,6 +2,7 @@
   "basePath": "./",
   "strict": true,
   "typeRoots": ["node_modules/@types"],
+  "types": ["react-notifications"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -28,7 +29,7 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "target": "es2015",
-    "outDir": "dist/js"
+    "outDir": "dist"
   },
 
   "include": ["./src/**/*.ts", "./src/**/*.tsx", "global.d.ts"],
