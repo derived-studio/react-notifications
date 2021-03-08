@@ -12,16 +12,11 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        targets: {
-          node: 'current',
-          chrome: 66,
-          firefox: 60
-        },
+        targets: '> 0.25%, not dead',
+        modules: 'commonjs',
         debug: true
       }
     ]
   ]
-  // const plugins = ['@babel/plugin-proposal-optional-chaining']
-
   return { presets, plugins: [] }
 }
