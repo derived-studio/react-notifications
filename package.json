@@ -5,7 +5,6 @@
   "repository": "https://github.com/derived-studio/react-notifications",
   "author": "Mark Bevels <mark.bevels@derived.studio>",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "test": "yarn jest",
     "dev": "webpack serve --config ./webpack.dev.js --progress --profile",
