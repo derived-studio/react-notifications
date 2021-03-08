@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
@@ -37,35 +38,42 @@ module.exports = {
               configFile: 'tsconfig.prod.json'
             }
           }
-        ],
-        include: /src/
+        ]
       },
       {
         test: /\.(js|jsx)$/,
-        use: ['babel-loader'],
-        include: /src/
+        use: ['babel-loader']
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader', // Creates `style` nodes from JS strings
+          MiniCssExtractPlugin.loader, // Extract css to separate files
           {
             // Translates CSS into CommonJS
             loader: 'css-loader',
             options: {
-              modules: false,
+              modules: true,
               sourceMap: true
             }
           },
-          'sass-loader' // Compiles Sass to CSS
-        ],
-        include: /src/
+          {
+            // Compiles Sass to CSS
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              implementation: require('sass')
+            }
+          }
+        ]
       }
     ]
   },
 
   plugins: [
     // new ESLintPlugin({ emitError: true, emitWarning: true, outputReport: true, files: 'src/**' }),
+    new MiniCssExtractPlugin({
+      filename: 'react-notifications.css'
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
