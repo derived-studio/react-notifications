@@ -17,16 +17,28 @@ function isType<TPayload>(action: Action, actionCreator: ActionCreator<TPayload>
 export const ActionPrefix = 'NOTIFICATIONS'
 
 export const addNotification = createAction<INotification>(`${ActionPrefix}/ADD_NOTIFICATION`)
+export const updateNotification = createAction<INotification>(`${ActionPrefix}/UPDATE_NOTIFICATION`)
 export const removeNotification = createAction<string>(`${ActionPrefix}/REMOVE_NOTIFICATION`)
 export const removeAllNotifications = createAction(`${ActionPrefix}/REMOVE_ALL_NOTIFICATIONS`)
 
-export function reducer(notifications: INotification[], action: Action) {
+export function notificationsReducer(notifications: INotification[], action?: Action): INotification[] {
+  if (!action) {
+    return [...notifications]
+  }
+
   if (isType(action, addNotification)) {
     return [...notifications, action.payload]
   }
 
   if (isType(action, removeNotification)) {
     return notifications.filter(({ id }) => id !== action.payload)
+  }
+
+  if (isType(action, updateNotification)) {
+    const { payload } = action
+    return notifications.map((notification) => {
+      return notification.id === payload.id ? payload : notification
+    })
   }
 
   if (isType(action, removeAllNotifications)) {
