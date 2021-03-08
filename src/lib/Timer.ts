@@ -21,7 +21,6 @@ export class Timer extends Observable<number> {
   }
 
   private tick(timestamp?: number) {
-    console.log('-', timestamp)
     if (!this._updateTime) {
       this._updateTime = timestamp
       this._requestId = window.requestAnimationFrame(this.tick.bind(this))
