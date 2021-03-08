@@ -2,7 +2,10 @@
   "name": "@derived/react-notifications",
   "version": "0.2.0",
   "description": "Notification component for react apps.",
-  "repository": "https://github.com/derived-studio/react-notifications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derived-studio/react-notifications.git"
+  },
   "author": "Mark Bevels <mark.bevels@derived.studio>",
   "license": "MIT",
   "scripts": {
@@ -55,5 +58,9 @@
   },
   "peerDependencies": {
     "react": "^17.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/derived-studio/react-notifications/issues"
+  },
+  "homepage": "https://github.com/derived-studio/react-notifications#readme"
 }
