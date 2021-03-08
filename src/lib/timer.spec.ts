@@ -20,6 +20,15 @@ describe('Timer', () => {
     expect(cappedHandler).toHaveBeenCalledTimes(expectedCalls)
   })
 
+  it('stops the timer', async () => {
+    const timer = new Timer()
+    expect(timer.isRunning).toBeFalsy()
+    timer.start()
+    expect(timer.isRunning).toBeTruthy()
+    timer.stop()
+    expect(timer.isRunning).toBeFalsy()
+  })
+
   function wait(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
