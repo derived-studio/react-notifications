@@ -5,7 +5,7 @@ export function createTestNotification(overrides: Partial<INotification> = {}): 
     id: 'test-notification-id',
     message: 'Test notification',
     type: NotificationType.Default,
-    progress: 1,
+    progress: undefined,
     created: Date.now(),
     ...overrides
   }

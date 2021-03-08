@@ -11,10 +11,10 @@ export enum NotificationType {
 
 export interface INotification {
   readonly id: string
-  readonly message: string
   readonly created: number
-  readonly type: NotificationType
-  readonly progress: number
+  type: NotificationType
+  message: string
+  progress?: number
 }
 
 export type NotificationProps = {
