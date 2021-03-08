@@ -5,12 +5,12 @@
   "repository": "https://github.com/derived-studio/react-notifications",
   "author": "Mark Bevels <mark.bevels@derived.studio>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "yarn jest",
     "dev": "webpack serve --config ./webpack.dev.js --progress --profile",
     "clean": "rimraf ./dist",
-    "build:types": "yarn tsc --p tsconfig.json --declaration --declarationDir ./dist --outDir dist --emitDeclarationOnly",
+    "build:types": "yarn tsc --p tsconfig.prod.json --declaration --emitDeclarationOnly --outFile ./dist/react-notifications.d.ts",
     "build:lib": "webpack --config ./webpack.prod.js --progress --profile",
     "build": "yarn build:types && yarn build:lib"
   },
