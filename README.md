@@ -1,68 +1,34 @@
 # React notifier
 
-> npm: @derived/react-notifier
+Notification library for React build for speed.
 
-## Goals
+> 🔨🔨🔨 WORK IN PROGRESS 🔨🔨🔨
 
-- Developed with Typescript
-- Solid code coverage
-- No singletons
-- Build for speed (no timeouts, uses next animation frame)
-- Minimum number of peer dependencies pulled on the demand
-- Supports both common and es6 import standards
-- Supports custom guid creation
-- Supports (but doesn't require) redux store
-- Styling support (css, sass, react styles, ...) - TBD
+## Why another notification library?
 
-## Usage concept
+Needed fast notification system that wouldn't choke the browser when run with large amount of notifications.
 
-### With defined id and programmatic removal
+## Design objectives
 
-```
-import { createState, createStore, createNotification } @derived/react-notifier
+- [+] Blazing fast (supports large amount of notifications)
+- [+] Doesn't use `setTimeout` or `setInterval`
+- [+] Build with TypeScript (types included)
+- [+] Single peer dependency `react`
+- [+] Solid code coverage
+- [+] Styling with SASS
+- [+] Minimal footprint
 
-const store = createStore(createState())
-const id = 'test-id'
-const notification = createNotification({ id, message: 'hello', remove })
-store.dispatch(addNotification(notification))
+## Features
 
-setTimeout(() => {
-    store.dispatch(removeNotification(id))
-}, 1000)
+- [+] Supports (but doesn't require) redux store
+- [+] Configurable refresh (rate based on desired FPS)
+- [+] Comes with timer based on `requestAnimationFrame`
+- [+] No singletons
 
-```
+## What's next?
 
-### With duration
-
-```
-import { createState, createStore, createNotification } @derived/react-notifier
-
-const store = createStore(createState())
-
-const notification = createNotification({ message: 'hello',  duration: 2000 })
-store.dispatch(addNotification(notification))
-
-```
-
-### With duration adn onRemove callback
-
-```
-import { createState, createStore, createNotification } @derived/react-notifier
-
-const store = createStore(createState())
-
-const onRemove = (notification) => console.log('Notification removed', notification)
-const notification = createNotification({ message: 'hello',  duration: 2000, onRemove })
-store.dispatch(addNotification(notification))
-
-```
-
-### Shorthand version
-
-```
-import { createState, createStore, createNotification } @derived/react-notifier
-const store = createStore(createState())
-
-// you don't need to call createNotification function
-store.dispatch(addNotification({ message: 'hello',  duration: 2000 }))
-```
+- [ ] Usage example code
+- [ ] Usage example docs
+- [ ] Documentation published to Github pages
+- [ ] Stackable notifications
+- [ ] Animations
