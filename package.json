@@ -11,8 +11,7 @@
     "dev": "webpack serve --config ./webpack.dev.js --progress --profile",
     "clean": "rimraf ./dist",
     "build:types": "yarn tsc --p tsconfig.prod.json --declaration --emitDeclarationOnly --outFile ./dist/react-notifications.d.ts",
-    "build:lib": "webpack --config ./webpack.prod.js --progress --profile",
-    "build": "yarn build:types && yarn build:lib"
+    "build": "webpack --config ./webpack.prod.js --progress --profile"
   },
   "main": "dist/react-notifications.min.js",
   "types": "dist/react-notifications.d.ts",
@@ -45,6 +44,7 @@
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.5.3",
+    "ts-loader": "^8.0.17",
     "typescript": "^4.2.3",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0",

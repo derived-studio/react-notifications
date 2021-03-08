@@ -21,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: 'babel-loader',
@@ -29,6 +29,12 @@ module.exports = {
               babelrc: false,
               cacheDirectory: true,
               plugins: ['@babel/plugin-proposal-optional-chaining']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: 'tsconfig.prod.json'
             }
           }
         ],
