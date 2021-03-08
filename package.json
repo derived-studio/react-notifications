@@ -15,8 +15,7 @@
     "build:types": "yarn tsc --p tsconfig.prod.json --declaration --emitDeclarationOnly --outFile ./dist/react-notifications.d.ts",
     "build:lib": "webpack --config ./webpack.prod.js --progress --profile --stats minimal",
     "build:lib:verbose": "webpack --config ./webpack.prod.js --progress --profile --stats verbose",
-    "build": "yarn clean && yarn build:lib",
-    "prepublish": "yarn test && yarn build"
+    "build": "yarn clean && yarn build:lib"
   },
   "files": [
     "./dist"
