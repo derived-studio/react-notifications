@@ -1,6 +1,6 @@
 {
   "name": "@derived/react-notifications",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Notification component for react apps.",
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
     "build:verbose": "webpack --config ./webpack.prod.js --progress --profile --stats verbose",
     "prepublishOnly": "yarn clean && yarn build:lib"
   },
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "main": "dist/react-notifications.min.js",
   "types": "dist/react-notifications.d.ts",
   "devDependencies": {
