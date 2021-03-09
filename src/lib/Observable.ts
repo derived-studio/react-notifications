@@ -17,7 +17,7 @@ export class Observable<TData = void> implements IObservable<TData> {
   }
 
   protected notify(data: TData): void {
-    this._subs.forEach((sub) => sub(data));
+    this._subs.forEach((sub) => sub(data))
   }
 
   protected get subscribers(): ISubscriber<TData>[] {

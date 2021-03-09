@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
 
 const outputFileName = 'react-notifications'
 module.exports = {
@@ -71,14 +70,6 @@ module.exports = {
   },
 
   plugins: [
-    new ESLintPlugin({
-      emitError: true,
-      emitWarning: true,
-      outputReport: true,
-      failOnWarning: true,
-      failOnError: true,
-      files: 'src/**'
-    }),
     new MiniCssExtractPlugin({
       filename: `${outputFileName}.css`
     }),

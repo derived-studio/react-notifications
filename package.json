@@ -16,7 +16,8 @@
     "build": "webpack --config ./webpack.prod.js --progress --profile --stats minimal",
     "build:clean": "yarn clean && yarn build",
     "clean": "rimraf ./dist",
-    "prepublishOnly": "yarn clean && yarn build"
+    "lint": "yarn eslint src/* --max-warnings=0",
+    "prepublishOnly": "yarn clean && yarn lint && yarn build"
   },
   "files": [
     "dist"
