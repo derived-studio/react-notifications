@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const ESLintPlugin = require('eslint-webpack-plugin')
 
+const outputFileName = 'react-notifications'
 module.exports = {
   mode: 'production',
   entry: './src/react-notifications.ts',
@@ -10,7 +11,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react-notifications.min.js',
+    filename: `${outputFileName}.min.js`,
     library: 'reactNotifications',
     libraryTarget: 'commonjs2'
   },
@@ -72,7 +73,7 @@ module.exports = {
   plugins: [
     // new ESLintPlugin({ emitError: true, emitWarning: true, outputReport: true, files: 'src/**' }),
     new MiniCssExtractPlugin({
-      filename: 'react-notifications.css'
+      filename: `${outputFileName}.css`
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
