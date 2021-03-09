@@ -5,7 +5,7 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/dev/index.tsx',
+  entry: './src/react-notifications.tsx',
   devtool: 'cheap-module-source-map',
 
   output: {

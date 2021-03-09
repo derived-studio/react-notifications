@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: './src/lib/index.ts',
+  entry: './src/react-notifications.ts',
   devtool: 'source-map',
 
   output: {
