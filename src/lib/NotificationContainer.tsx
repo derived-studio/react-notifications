@@ -1,10 +1,12 @@
 import React, { Component, ReactNode } from 'react'
-import { INotification, Notification } from './Notification'
 
 import './container.scss'
+import { Notification } from './Notification'
+import { INotification } from './notification.types'
 
 export type NotificationContainerProps = {
   notifications: INotification[]
+  iconMap?: Record<string, string>
   className?: string
 }
 
@@ -13,20 +15,23 @@ export class NotificationContainer extends Component<NotificationContainerProps>
     super(props)
   }
 
-  renderNotification({ id, message, type, progress }: INotification): ReactNode {
+  renderNotification({ id, message, type, progress, icon }: INotification): ReactNode {
     return (
-      <Notification key={id} id={id} type={type} progress={progress}>
+      <Notification key={id} id={id} type={type} progress={progress} icon={icon}>
         {message}
       </Notification>
     )
   }
 
   render(): ReactNode {
-    const { className = '' } = this.props
+    const { iconMap, className = '' } = this.props
 
     return (
       <div className={`notification-container fixed ${className}`.trim()}>
-        {this.props.notifications.map(this.renderNotification)}
+        {this.props.notifications.map((notification) => {
+          const { icon = iconMap ? iconMap[notification.type] : undefined } = notification
+          return this.renderNotification({ ...notification, icon })
+        })}
       </div>
     )
   }

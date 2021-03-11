@@ -21,7 +21,8 @@ $warningHover: #c09f3c !default;
 $awesome: #4c3fb1 !default;
 $awesomeHover: #685dc3 !default;
 
-$color: #ffffffaa !default;
+$textColor: #ffffffaa !default;
+$iconColor: #ffffff88 !default;
 $progress: #ffffff !default;
 $progressBar: #ffffff55 !default;
 $progressHeight: 4px;
@@ -53,12 +54,14 @@ $borderRadius: 6px;
   font-size: 1em;
   clear: both;
   display: flex;
+  // flex-direction: row-reverse;
   align-items: center;
   align-content: center;
   margin: 2px;
   cursor: pointer;
 
   > .icon {
+    color: $textColor;
     background-color: $default;
     position: relative;
     right: 0;
@@ -77,6 +80,12 @@ $borderRadius: 6px;
     align-items: center;
     justify-content: center;
     border: $border;
+    & span {
+      font-size: 1.5em;
+    }
+  }
+  > .content + .icon {
+    transform: translateX(-8px);
   }
 
   > .content {
@@ -85,7 +94,6 @@ $borderRadius: 6px;
     flex: 1;
     background-color: $default;
     border: $border;
-    // transform: translateX(8px);
     border-radius: $borderRadius;
     overflow: hidden;
 
@@ -101,7 +109,7 @@ $borderRadius: 6px;
     }
 
     > .body {
-      color: $color;
+      color: $textColor;
       padding: 4px 20px;
       font-size: 0.9em;
       text-align: right;

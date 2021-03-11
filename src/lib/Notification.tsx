@@ -1,30 +1,7 @@
 import React, { Component, ReactNode } from 'react'
+import { NotificationProps } from './notification.types'
+
 import './notification.scss'
-
-export enum NotificationType {
-  Default = 'default',
-  Info = 'info',
-  Error = 'error',
-  Success = 'success',
-  Warning = 'warning'
-}
-
-export interface INotification {
-  readonly id: string
-  readonly created: number
-  type: NotificationType
-  message: string
-  progress?: number
-}
-
-export type NotificationProps = {
-  id: string
-  type?: string
-  progress?: number
-  icon?: string
-  children: ReactNode
-  onClick?: (id: string) => void
-}
 
 export class Notification extends Component<NotificationProps> {
   constructor(props: NotificationProps) {
@@ -36,7 +13,7 @@ export class Notification extends Component<NotificationProps> {
     return true
   }
 
-  handleClick(): void {
+  private handleClick(): void {
     if (this.props.onClick) {
       this.props.onClick(this.props.id)
     }
@@ -54,11 +31,7 @@ export class Notification extends Component<NotificationProps> {
             </div>
           )}
         </div>
-        {icon && (
-          <div className="icon">
-            <img className="glyph" src="" />
-          </div>
-        )}
+        {icon && <div className="icon">{icon.length === 1 ? <span>{icon}</span> : <img src={icon} />}</div>}
       </div>
     )
   }

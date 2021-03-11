@@ -1,4 +1,4 @@
-import { INotification, NotificationType } from './Notification'
+import { INotification, NotificationType } from './notification.types'
 
 export function createTestNotification(overrides: Partial<INotification> = {}): INotification {
   return {

@@ -1,6 +1,8 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { Notification, NotificationType } from './Notification'
+import { Notification } from './Notification'
+import { NotificationType } from './notification.types'
+import { createTestNotification } from './notification.mocks'
 
 describe('Notification', () => {
   it('renders with message', () => {
@@ -39,7 +41,7 @@ describe('Notification', () => {
     [NotificationType.Error, 'error'],
     [NotificationType.Success, 'success'],
     [NotificationType.Warning, 'warning']
-  ])('renders with type class', (type: NotificationType, className: string): void => {
+  ])('renders with %s type class', (type: NotificationType, className: string): void => {
     const id = `test-${type}-id`
     const message = `Test ${type ? type : 'default'} notification`
     const { getByText } = render(
@@ -48,5 +50,37 @@ describe('Notification', () => {
       </Notification>
     )
     expect(getByText(message).parentElement.parentElement).toHaveClass(`notification ${className}`.trimRight())
+  })
+
+  it.each([
+    [NotificationType.Default, '#'],
+    [NotificationType.Info, 'ℹ'],
+    [NotificationType.Error, '!'],
+    [NotificationType.Success, '✓'],
+    [NotificationType.Warning, '⚠']
+  ])('renders with %s icon', (type: NotificationType, glyphIcon: string): void => {
+    const id = `test-${type}-id`
+    const message = `Test ${type ? type : 'default'} notification`
+    const { getByText } = render(
+      <Notification id={id} type={type} icon={glyphIcon}>
+        {message}
+      </Notification>
+    )
+    const glyph = getByText(glyphIcon)
+    expect(glyph).toBeInTheDocument()
+    expect(glyph.parentElement).toHaveClass('icon')
+  })
+
+  it('renders with icon image', () => {
+    const icon = 'http://test.com/image.png'
+    const { id, type, message } = createTestNotification({ icon })
+    const { getByText, container } = render(
+      <Notification id={id} type={type} icon={icon}>
+        {message}
+      </Notification>
+    )
+
+    expect(getByText(message)).toBeInTheDocument()
+    expect(container.querySelector(`.notification .icon img[src="${icon}"]`)).toBeInTheDocument()
   })
 })
