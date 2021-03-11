@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Styling
+
+- Aligned notification progress bar to the right
+
 ### Breaking changes
 
 - Renamed `Container` to `NotificationContainer`
