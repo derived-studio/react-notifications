@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import { NotificationContainer } from './NotificationContainer'
 import { createTestNotification } from './notification.mocks'
 import { NotificationType } from './notification.types'
@@ -29,5 +29,17 @@ describe('Notification container', () => {
       const notification = getByText(message)
       expect(notification).toBeInTheDocument()
     })
+  })
+
+  it('forwards onclick handler to rendered notification', () => {
+    const id = 'test-notification-id'
+    const message = 'test notification'
+    const onClick = jest.fn()
+    const notification = createTestNotification({ id, message })
+    const { getByText } = render(<NotificationContainer {...{ onClick, notifications: [notification] }} />)
+    fireEvent.click(getByText(message))
+
+    expect(onClick).toHaveBeenCalledTimes(1)
+    expect(onClick).toHaveBeenCalledWith(id)
   })
 })

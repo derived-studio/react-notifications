@@ -8,16 +8,23 @@ export type NotificationContainerProps = {
   notifications: INotification[]
   iconMap?: Record<string, string>
   className?: string
+  onClick?: (id: string) => void
 }
 
 export class NotificationContainer extends Component<NotificationContainerProps> {
   constructor(props: NotificationContainerProps) {
     super(props)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  renderNotification({ id, message, type, progress, icon }: INotification): ReactNode {
+  private handleClick(notificationId: string): void {
+    const { onClick } = this.props
+    onClick && onClick(notificationId)
+  }
+
+  private renderNotification({ id, message, type, progress, icon }: INotification): ReactNode {
     return (
-      <Notification key={id} id={id} type={type} progress={progress} icon={icon}>
+      <Notification key={id} id={id} type={type} progress={progress} icon={icon} onClick={this.handleClick}>
         {message}
       </Notification>
     )

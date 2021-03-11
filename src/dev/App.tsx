@@ -8,7 +8,6 @@ import { Timer } from '../lib/Timer'
 
 import './app.scss'
 
-const duration = 4 * 1000
 function randomizeNotifications(elements: number): INotification[] {
   const types = [
     NotificationType.Default,
@@ -26,8 +25,11 @@ function randomizeNotifications(elements: number): INotification[] {
 }
 
 export function App(): JSX.Element {
+  const duration = 10 * 1000
+  const notificationCount = 200
+
   const timer = useRef(new Timer({ fps: 60 }))
-  const notifications = useRef(randomizeNotifications(100))
+  const notifications = useRef(randomizeNotifications(notificationCount))
   const [, setLastUpdate] = useState(Date.now())
 
   useEffect(() => {
@@ -53,5 +55,16 @@ export function App(): JSX.Element {
     timer.current.start()
   }, [])
 
-  return <NotificationContainer notifications={notifications.current} iconMap={defaultIcons} className="top right" />
+  const onClick = (notificationId: string) => {
+    notifications.current = notificationsReducer(notifications.current, removeNotification(notificationId))
+  }
+
+  return (
+    <NotificationContainer
+      className="top right"
+      notifications={notifications.current}
+      iconMap={defaultIcons}
+      onClick={onClick}
+    />
+  )
 }
