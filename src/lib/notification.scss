@@ -21,14 +21,14 @@ $warningHover: #c09f3c !default;
 $awesome: #4c3fb1 !default;
 $awesomeHover: #685dc3 !default;
 
-$textColor: #ffffffaa !default;
-$iconColor: #ffffff88 !default;
-$progress: #ffffff !default;
-$progressBar: #ffffff55 !default;
+$text: #ffffffaa !default;
+$icon: #ffffff88 !default;
+$progress: #ffffff88 !default;
+$progressBG: #ffffff44 !default;
 $progressHeight: 4px;
 
-$border: 2px solid #ffffff55;
-$borderRadius: 6px;
+$border: 2px solid #00000044;
+$borderRadius: 5px;
 
 @mixin typeStyle($type, $color, $colorHover) {
   &.#{$type} {
@@ -61,7 +61,7 @@ $borderRadius: 6px;
   cursor: pointer;
 
   > .icon {
-    color: $textColor;
+    color: $text;
     background-color: $default;
     position: relative;
     right: 0;
@@ -100,7 +100,7 @@ $borderRadius: 6px;
     > .progress {
       display: flex;
       justify-content: flex-end;
-      background-color: $progressBar;
+      background-color: $progressBG;
 
       > div {
         background-color: $progress;
@@ -109,7 +109,7 @@ $borderRadius: 6px;
     }
 
     > .body {
-      color: $textColor;
+      color: $text;
       padding: 4px 20px;
       font-size: 0.9em;
       text-align: right;
