@@ -16,17 +16,19 @@ function randomizeNotifications(elements: number): INotification[] {
     NotificationType.Info,
     NotificationType.Success
   ]
-  return [...Array(elements)].map((_, i) => {
-    const id = `${i}`
-    const progress = 1 - i / elements
-    const type = types[Math.floor(Math.random() * types.length)]
-    return createTestNotification({ id, message: `Notification no.: ${i + 1}`, progress, type })
-  })
+  return [...Array(elements)]
+    .map((_, i) => {
+      const id = `${i}`
+      const progress = i / elements
+      const type = types[Math.floor(Math.random() * types.length)]
+      return createTestNotification({ id, message: `Notification no.: ${i + 1}`, progress, type })
+    })
+    .reverse()
 }
 
 export function App(): JSX.Element {
   const duration = 10 * 1000
-  const notificationCount = 200
+  const notificationCount = 10
 
   const timer = useRef(new Timer({ fps: 60 }))
   const notifications = useRef(randomizeNotifications(notificationCount))
@@ -61,7 +63,7 @@ export function App(): JSX.Element {
 
   return (
     <NotificationContainer
-      className="top right"
+      className="bottom right"
       notifications={notifications.current}
       iconMap={defaultIcons}
       onClick={onClick}

@@ -3,8 +3,15 @@ body {
   font-family: Gruppo, cursive;
 }
 
-.notification {
-  > .content > .body {
-    font-size: 1.1em;
+.notification-container.bottom {
+  // bottom: 200px;
+  // height: 500px;
+  // border: 1px solid white;
+  overflow-y: hidden;
+
+  .notification {
+    > .content > .body {
+      font-size: 1.1em;
+    }
   }
 }

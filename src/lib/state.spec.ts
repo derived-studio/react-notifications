@@ -3,8 +3,12 @@ import { addNotification, notificationsReducer, removeAllNotifications, removeNo
 
 describe('Notification reducer', () => {
   it('adds notification', () => {
-    const notification = createTestNotification()
-    expect(notificationsReducer([], addNotification(notification))).toEqual([notification])
+    const oldNotification = createTestNotification({ id: 'old-notification-id' })
+    const newNotification = createTestNotification({ id: 'new-notification-id' })
+    expect(notificationsReducer([oldNotification], addNotification(newNotification))).toEqual([
+      oldNotification,
+      newNotification
+    ])
   })
 
   it('removes notification', () => {

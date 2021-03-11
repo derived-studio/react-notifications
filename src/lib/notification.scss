@@ -26,9 +26,30 @@ $icon: #ffffff88 !default;
 $progress: #ffffff88 !default;
 $progressBG: #ffffff44 !default;
 $progressHeight: 4px;
+$dropDistance: -600px;
 
 $border: 2px solid #00000044;
 $borderRadius: 5px;
+
+@keyframes notificationAnimation {
+  0% {
+    transform: translateY($dropDistance) scale(0);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY($dropDistance) scale(1.2);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY($dropDistance) scale(1);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 @mixin typeStyle($type, $color, $colorHover) {
   &.#{$type} {
@@ -55,6 +76,8 @@ $borderRadius: 5px;
   clear: both;
   display: flex;
   // flex-direction: row-reverse;
+  animation: notificationAnimation 1.4s ease-in-out;
+
   align-items: center;
   align-content: center;
   margin: 2px;
