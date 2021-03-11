@@ -15,7 +15,7 @@ export class NotificationContainer extends Component<NotificationContainerProps>
 
   renderNotification({ id, message, type, progress }: INotification): ReactNode {
     return (
-      <Notification key={id} id={id} type={type} progress={progress} icon={'src'}>
+      <Notification key={id} id={id} type={type} progress={progress}>
         {message}
       </Notification>
     )
