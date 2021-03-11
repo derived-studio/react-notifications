@@ -1,3 +1,10 @@
 body {
   background-color: #000000;
+  font-family: Gruppo, cursive;
+}
+
+.notification {
+  > .content > .body {
+    font-size: 1.1em;
+  }
 }
