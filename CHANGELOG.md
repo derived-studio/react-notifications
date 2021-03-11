@@ -2,9 +2,7 @@
 
 ## Unreleased
 
-git
-
-## Breaking changes
+### Breaking changes
 
 - Renamed `Container` to `NotificationContainer`
 - Renamed `ContainerProps` to `NotificationContainerProps`
