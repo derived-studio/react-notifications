@@ -1,8 +1,9 @@
 import React, { Component, ReactNode } from 'react'
 
-import './container.scss'
 import { Notification } from './Notification'
 import { INotification } from './notification.types'
+
+import './notificationContainer.scss'
 
 export type NotificationContainerProps = {
   notifications: INotification[]
