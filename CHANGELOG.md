@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Usage
+
+- Added onClick support to notification container.
+
 ## 0.4.0
 
 ### New Features
