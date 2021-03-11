@@ -4,7 +4,15 @@
 
 ### Usage
 
-- Added onClick support to notification container.
+- Added `onClick` support to notification container.
+
+### Styling
+
+- Improved default notification styling
+
+### Example app
+
+- Added Gruppo font family
 
 ## 0.4.0
 
