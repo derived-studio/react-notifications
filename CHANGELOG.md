@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.0
+
 ### New Features
 
 - Added support for notification emoji and asci glyph icons"
