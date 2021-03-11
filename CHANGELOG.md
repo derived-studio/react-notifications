@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### New Features
+
+- Added support for notification emoji and asci glyph icons"
+
 ### Styling
 
 - Aligned notification progress bar to the right
