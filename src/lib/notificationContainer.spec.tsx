@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Container } from './Container'
+import { NotificationContainer } from './NotificationContainer'
 import { NotificationType } from './Notification'
 import { createTestNotification } from './notification.mocks'
 
@@ -23,7 +23,7 @@ describe('Notification container', () => {
       })
     ]
 
-    const { getByText } = render(<Container {...{ notifications }} />)
+    const { getByText } = render(<NotificationContainer {...{ notifications }} />)
 
     Object.values(notifications).forEach(({ message }) => {
       const notification = getByText(message)

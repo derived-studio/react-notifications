@@ -3,13 +3,13 @@ import { INotification, Notification } from './Notification'
 
 import './container.scss'
 
-export type ContainerProps = {
+export type NotificationContainerProps = {
   notifications: INotification[]
   className?: string
 }
 
-export class Container extends Component<ContainerProps> {
-  constructor(props: ContainerProps) {
+export class NotificationContainer extends Component<NotificationContainerProps> {
+  constructor(props: NotificationContainerProps) {
     super(props)
   }
 

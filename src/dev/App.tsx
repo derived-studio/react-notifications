@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Timer } from '../lib/Timer'
-import { Container } from '../lib/Container'
+import { NotificationContainer } from '../lib/NotificationContainer'
 import { INotification, NotificationType } from '../lib/Notification'
 import { notificationsReducer, removeNotification, updateNotification } from '../lib/state'
 import { createTestNotification } from '../lib/notification.mocks'
@@ -52,5 +52,5 @@ export function App(): JSX.Element {
     timer.current.start()
   }, [])
 
-  return <Container notifications={notifications.current} className="top right" />
+  return <NotificationContainer notifications={notifications.current} className="top right" />
 }

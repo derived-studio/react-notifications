@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+git
+
+## Breaking changes
+
+- Renamed `Container` to `NotificationContainer`
+- Renamed `ContainerProps` to `NotificationContainerProps`
+
 ### Documentation
 
 - Added installation notes
