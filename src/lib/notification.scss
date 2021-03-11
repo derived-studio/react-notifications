@@ -50,7 +50,7 @@ $borderRadius: 5px;
 }
 
 .notification {
-  width: 200px;
+  min-width: 200px;
   font-size: 1em;
   clear: both;
   display: flex;
@@ -61,7 +61,7 @@ $borderRadius: 5px;
   cursor: pointer;
 
   > .icon {
-    color: $text;
+    color: $icon;
     background-color: $default;
     position: relative;
     right: 0;
