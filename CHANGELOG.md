@@ -5,6 +5,8 @@
 ### Usage
 
 - Added `onClick` support to notification container.
+- Added `createNotificationFactory` method.
+- Added static `Notification.types` member exposing notification types.
 
 ### Styling
 

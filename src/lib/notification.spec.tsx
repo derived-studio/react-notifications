@@ -35,6 +35,16 @@ describe('Notification', () => {
     expect(body.parentElement.parentElement).toHaveClass('notification')
   })
 
+  it('exposes static types', () => {
+    expect(Notification.types).toEqual([
+      NotificationType.Default,
+      NotificationType.Info,
+      NotificationType.Error,
+      NotificationType.Success,
+      NotificationType.Warning
+    ])
+  })
+
   it.each([
     [NotificationType.Default, ''],
     [NotificationType.Info, 'info'],

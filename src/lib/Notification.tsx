@@ -1,9 +1,13 @@
 import React, { Component, ReactNode } from 'react'
-import { NotificationProps } from './notification.types'
+import { NotificationProps, NotificationType } from './notification.types'
 
 import './notification.scss'
 
 export class Notification extends Component<NotificationProps> {
+  public static types: string[] = Object.keys(NotificationType)
+    .map((key) => NotificationType[key])
+    .filter((k) => !(parseInt(k) >= 0))
+
   constructor(props: NotificationProps) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
