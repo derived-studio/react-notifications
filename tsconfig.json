@@ -1,14 +1,9 @@
 {
-  "basePath": "./",
+  "basePath": "./src/",
   "strict": true,
   "typeRoots": ["node_modules/@types"],
   "types": ["react-notifications"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["src/*"]
-    },
-
     "declaration": true,
     "noImplicitReturns": false,
     "allowJs": false,
