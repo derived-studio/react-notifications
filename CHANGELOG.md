@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## Unreleased
+<!-- ## Unreleased -->
+
+## 0.5.1
+
+- Fixed CHANGELOG notes
+
+## 0.5.0
 
 ### Aria support
 
