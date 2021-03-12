@@ -2,7 +2,7 @@
 
 <!-- ## Unreleased -->
 
-## Unreleased
+## 0.5.2
 
 ### Example fixes
 
