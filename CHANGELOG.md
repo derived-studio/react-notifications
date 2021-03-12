@@ -10,22 +10,22 @@
 
 ## 0.5.1
 
-- Fixed CHANGELOG notes
+- Fixed CHANGELOG notes.
 
 ## 0.5.0
 
 ### Aria support
 
-- Added `alert` role to the notification
+- Added `alert` role to the notification.
 
 ### Usage changes
 
 - Added `onClick` support to notification container.
 - Added `createNotificationFactory` method.
 - Added static `Notification.types` member exposing notification types.
-- Added notification context and `NotificationContextProvider` component
-- Added `useNotifications` hook
-- Added `withNotifications` higher order component
+- Added notification context and `NotificationContextProvider` component.
+- Added `useNotifications` hook.
+- Added `withNotifications` higher order component.
 
 ### Example Changes
 
@@ -33,7 +33,7 @@
 
 ### Styling
 
-- Improved default notification styling
+- Improved default notification styling.
 
 ### Fixes
 
@@ -41,7 +41,7 @@
 
 ### Example app
 
-- Added Gruppo font family
+- Added Gruppo font family.
 
 ## 0.4.0
 
