@@ -35,11 +35,11 @@ export class NotificationContainer extends Component<NotificationContainerProps>
 
   render(): ReactNode {
     const { iconMap, className = '' } = this.props
-
+    const notifications = [...this.props.notifications].reverse()
     return (
       <div ref={(element) => (this.divRef = element)} className={`notification-container ${className}`.trim()}>
         <div className="notifications">
-          {this.props.notifications.map((notification) => {
+          {notifications.map((notification) => {
             const { icon = iconMap ? iconMap[notification.type] : undefined } = notification
             return this.renderNotification({ ...notification, icon })
           })}

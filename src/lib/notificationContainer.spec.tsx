@@ -42,4 +42,24 @@ describe('Notification container', () => {
     expect(onClick).toHaveBeenCalledTimes(1)
     expect(onClick).toHaveBeenCalledWith(id)
   })
+
+  it('renders notifications in reverse order', () => {
+    const notifications = [
+      createTestNotification({
+        id: 'notification-one',
+        message: 'First notification'
+      }),
+      createTestNotification({
+        id: 'notification-two',
+        message: 'Second notification',
+        type: NotificationType.Warning
+      })
+    ]
+
+    const { getAllByRole } = render(<NotificationContainer {...{ notifications }} />)
+    const elements = getAllByRole('alert')
+    expect(elements).toHaveLength(2)
+    expect(elements[0].textContent).toBe(notifications[1].message)
+    expect(elements[1].textContent).toBe(notifications[0].message)
+  })
 })

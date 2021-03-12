@@ -2,11 +2,11 @@
 
 ## Unreleased
 
-### Aria
+### Aria support
 
 - Added `alert` role to the notification
 
-### Usage
+### Usage changes
 
 - Added `onClick` support to notification container.
 - Added `createNotificationFactory` method.
@@ -18,6 +18,10 @@
 ### Styling
 
 - Improved default notification styling
+
+### Fixes
+
+- Fixed the order of notifications rendered by notification container.
 
 ### Example app
 
