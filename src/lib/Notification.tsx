@@ -32,7 +32,9 @@ export class Notification extends Component<NotificationProps> {
         // style={{ transform: 'translateY(100px)' }}
       >
         <div className="content">
-          <div className="body">{children}</div>
+          <div className="body" role="alert">
+            {children}
+          </div>
           {this.isNumber(progress) && (
             <div className="progress">
               <div style={{ width: `${progress * 100}%` }}></div>

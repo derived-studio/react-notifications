@@ -11,6 +11,19 @@ describe('Notification', () => {
     expect(getByText(message)).toBeInTheDocument()
   })
 
+  it('renders with alert role', () => {
+    const message = 'Test notification message'
+    const { getByText, getByRole } = render(<Notification id={'test-id'}>{message}</Notification>)
+
+    const alertBody = getByRole('alert')
+    expect(alertBody).toBeInTheDocument()
+
+    const msgBody = getByText(message)
+    expect(msgBody).toBeInTheDocument()
+
+    expect(alertBody).toEqual(msgBody)
+  })
+
   it('calls on click handler', () => {
     const message = 'Test notification message'
     const id = 'test-id'

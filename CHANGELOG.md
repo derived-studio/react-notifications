@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Aria
+
+- Added `alert` role to the notification
+
 ### Usage
 
 - Added `onClick` support to notification container.
