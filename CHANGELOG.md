@@ -2,6 +2,12 @@
 
 <!-- ## Unreleased -->
 
+## Unreleased
+
+### Effects
+
+- More subtle elastic effect.
+
 ## 0.5.1
 
 - Fixed CHANGELOG notes
