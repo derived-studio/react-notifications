@@ -7,6 +7,9 @@
 - Added `onClick` support to notification container.
 - Added `createNotificationFactory` method.
 - Added static `Notification.types` member exposing notification types.
+- Added notification context and `NotificationContextProvider` component
+- Added `useNotifications` hook
+- Added `withNotifications` higher order component
 
 ### Styling
 
