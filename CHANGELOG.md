@@ -15,6 +15,10 @@
 - Added `useNotifications` hook
 - Added `withNotifications` higher order component
 
+### Example Changes
+
+- Refactored app with new notification context.
+
 ### Styling
 
 - Improved default notification styling

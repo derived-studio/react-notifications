@@ -1,6 +1,6 @@
 import { NotificationType } from './notification.types'
 
-export default {
+export const defaultIcons = {
   [NotificationType.Default]: '#',
   [NotificationType.Info]: 'ℹ',
   [NotificationType.Error]: '!',
