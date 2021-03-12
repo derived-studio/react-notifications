@@ -3,14 +3,14 @@ import { createNotificationFactory, NotificationOverrides } from '../lib/createN
 import { Notification } from '../lib/Notification'
 
 export const createNotification = createNotificationFactory({
-  generate: () => `${Date.now}-${Math.round(Math.random() * 1e6)}`,
+  generate: () => `${Date.now()}-${Math.round(Math.random() * 1e6)}`,
   defaultType: NotificationType.Default
 })
 
 export function randomizeNotification(overrides: NotificationOverrides): INotification {
   const { types } = Notification
   const type = types[Math.floor(Math.random() * types.length)] as NotificationType
-  const progress = Math.round(Math.random() * 1e6) / 1e3
+  const progress = Math.round(Math.random() * 1e6) / 1e6
   return createNotification({ progress, type, ...overrides })
 }
 

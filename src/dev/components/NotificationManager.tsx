@@ -1,29 +1,40 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { removeNotification, updateNotification } from '../../lib/state'
-import { randomizeNotifications } from '../notificationFactory'
 import { useNotifications } from '../../lib/notificationContext'
 
 export function NotificationManager(): JSX.Element {
-  const { timer, dispatch } = useNotifications()
-  const duration = 10 * 1000
+  const { timer, dispatch, notifications: current } = useNotifications()
+  const notifications = useRef(current)
+  const maxLifeTime = 10 * 1000
 
-  const notifications = useRef(randomizeNotifications(10))
-  const [, setLastUpdate] = useState(Date.now())
+  useEffect(() => {
+    notifications.current = current
+  }, [current])
 
   useEffect(() => {
     const subscriber = (deltaTime: number) => {
-      setLastUpdate(Date.now())
-      const delta = deltaTime / duration
+      const currentNotifications = notifications.current
 
-      notifications.current.forEach((notification) => {
+      if (!currentNotifications || currentNotifications.length === 0) {
+        return
+      }
+
+      const delta = deltaTime / maxLifeTime
+
+      currentNotifications.forEach((notification) => {
+        if (notification.progress === undefined) {
+          return
+        }
+
         const progress = notification.progress - delta
-
         if (progress <= 0) {
           dispatch(removeNotification(notification.id))
           return
         }
 
-        dispatch(updateNotification({ ...notification, progress }))
+        if (notification.progress !== progress) {
+          dispatch(updateNotification({ ...notification, progress }))
+        }
       })
     }
 
@@ -31,5 +42,5 @@ export function NotificationManager(): JSX.Element {
     timer.start()
   }, [])
 
-  return <></>
+  return <div>m</div>
 }

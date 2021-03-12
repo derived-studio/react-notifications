@@ -4,6 +4,11 @@
 
 ## Unreleased
 
+### Example fixes
+
+- Fixed referencing state
+- Fixed performance issue
+
 ### Effects
 
 - More subtle elastic effect.

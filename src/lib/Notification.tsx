@@ -26,11 +26,7 @@ export class Notification extends Component<NotificationProps> {
   render(): ReactNode {
     const { progress, children, icon, type } = this.props
     return (
-      <div
-        className={`notification ${type}`.trimRight()}
-        onClick={this.handleClick}
-        // style={{ transform: 'translateY(100px)' }}
-      >
+      <div className={`notification ${type}`.trimRight()} onClick={this.handleClick}>
         <div className="content">
           <div className="body" role="alert">
             {children}
