@@ -11,7 +11,8 @@
 ### Docs
 
 - Added basic package badges.
-- Rationale section.
+- Added motivation section.
+- Added couple more features.
 
 ## 0.5.2
 

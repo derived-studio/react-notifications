@@ -34,7 +34,7 @@ There are really good and popular packages out there.
 - [x] Supports large amount of notifications
 - [x] Doesn't use `setTimeout` or `setInterval`
 - [x] Comes with custom internal timer based on `requestAnimationFrame()`
-- [x] Configurable refresh (rate based on desired FPS)
+- [x] Configurable refresh rate (based on desired FPS)
 - [ ] GPU based CSS animation (in progress)
 
 ### 🎁 ...and more
@@ -42,7 +42,10 @@ There are really good and popular packages out there.
 - [x] Small footprint (~3.2KB)
 - [x] Build with TypeScript (types included)
 - [x] Single peer dependency: `react`
-- [x] Supports (but doesn't require) redux store
+- [x] Notification container included
+- [x] Comes with state management
+  - [x] Supports Redux usage
+  - [x] Supports Context usage
 - [x] Solid test coverage
 - [x] Styled with SASS
 - [x] No singletons
