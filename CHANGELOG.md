@@ -16,6 +16,10 @@
 - Refactoring: Moved notification types to Notification component.
 - Added `NotificationMode` - notification render mode.
 
+### Documentation
+
+- Added development notes.
+
 ### Docs
 
 - Added basic package badges.
