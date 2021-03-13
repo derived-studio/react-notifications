@@ -8,6 +8,7 @@
 
 - VSCode formatting config for TypeScript.
 - Added `NotificationIcon` component.
+- Refactoring: Moved notification types to Notification component.
 
 ### Docs
 
