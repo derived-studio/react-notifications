@@ -6,7 +6,7 @@ import { removeNotification } from '../../lib/state'
 import { NotificationMode } from '../../lib/Notification'
 import { Button } from './Button'
 
-const modes = [NotificationMode.Expanded, NotificationMode.Collapsed, NotificationMode.Expandable]
+const modes = [NotificationMode.Expanded, NotificationMode.Expandable, NotificationMode.Collapsed]
 
 export const NotificationContainer: FC = () => {
   const { dispatch, notifications } = useNotifications()

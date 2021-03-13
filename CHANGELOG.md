@@ -28,10 +28,10 @@
 ### Documentation
 
 - Added development notes.
-
-### Docs
-
-- Added basic package badges.
+- Added code quality badge.
+- Added package version badge.
+- Added download badge.
+- Added dependency badges.
 - Added motivation section.
 - Added couple more features.
 

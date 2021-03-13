@@ -1,5 +1,9 @@
+[![dependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg)](https://david-dm.org/derived-studio/react-notifications)
+[![devDependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg?type=dev)](https://david-dm.org/derived-studio/react-notifications?type=dev)
+[![peerDependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg?type=peer)](https://david-dm.org/derived-studio/react-notifications?type=peer)  
 [![npm version](https://badgen.net/npm/v/@derived/react-notifications)](https://www.npmjs.com/package/@derived/react-notifications)
 [![Minified & Gzipped size](https://badgen.net/bundlephobia/minzip/@derived/react-notifications)](https://bundlephobia.com/result?p=@derived/react-notifications)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c99c6a2921fb42079572db10cb79b122)](https://www.codacy.com/gh/derived-studio/react-notifications/dashboard?utm_source=github.com&utm_medium=referral&utm_content=derived-studio/react-notifications&utm_campaign=Badge_Grade)
 [![npm](https://img.shields.io/npm/dm/@derived/react-notifications)](https://www.npmjs.com/package/@derived/react-notifications)
 
 # React notifications
