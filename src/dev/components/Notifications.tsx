@@ -3,12 +3,12 @@ import { useNotifications } from '../../lib/notificationContext'
 import { NotificationContainer as DefaultContainer } from '../../lib/NotificationContainer'
 import { defaultIcons } from '../../lib/notificationIcons'
 import { removeNotification } from '../../lib/state'
-import { NotificationBehavior } from '../../lib/Notification'
+import { NotificationMode } from '../../lib/Notification'
 
 export type NotificationContainerProps = {
-  behavior: NotificationBehavior
+  mode: NotificationMode
 }
-export const NotificationContainer: FC<NotificationContainerProps> = ({ behavior }) => {
+export const NotificationContainer: FC<NotificationContainerProps> = ({ mode }) => {
   const { dispatch, notifications } = useNotifications()
 
   const onClick = (notificationId: string) => {
@@ -17,7 +17,7 @@ export const NotificationContainer: FC<NotificationContainerProps> = ({ behavior
 
   return (
     <DefaultContainer
-      behavior={behavior}
+      mode={mode}
       notifications={notifications}
       onClick={onClick}
       className="bottom right"

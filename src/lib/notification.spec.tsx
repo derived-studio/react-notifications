@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { Notification, NotificationType } from './Notification'
+import { Notification, NotificationMode, NotificationType } from './Notification'
 import { createTestNotification } from './notification.mocks'
 
 describe('Notification', () => {
@@ -81,10 +81,9 @@ describe('Notification', () => {
     [NotificationType.Success, '✓'],
     [NotificationType.Warning, '⚠']
   ])('renders with %s icon', (type: NotificationType, glyphIcon: string): void => {
-    const id = `test-${type}-id`
     const message = `Test ${type ? type : 'default'} notification`
     const { getByText } = render(
-      <Notification id={id} type={type} icon={glyphIcon}>
+      <Notification id={`test-${type}-id`} type={type} icon={glyphIcon}>
         {message}
       </Notification>
     )
@@ -92,6 +91,19 @@ describe('Notification', () => {
     expect(glyph).toBeInTheDocument()
     expect(glyph.parentElement).toHaveClass('icon')
   })
+
+  it.each([NotificationMode.Expandable, NotificationMode.Expanded, NotificationMode.Collapsed])(
+    'renders with %behavior behavior class name',
+    (behavior: NotificationMode): void => {
+      const message = `Test ${behavior ? behavior : 'default'} notification`
+      const { container } = render(
+        <Notification id={`test-${behavior}-id`} mode={behavior} icon={'@'}>
+          {message}
+        </Notification>
+      )
+      expect(container.firstChild).toHaveClass(behavior)
+    }
+  )
 
   it('renders with icon image', () => {
     const icon = 'http://test.com/image.png'

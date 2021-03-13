@@ -11,10 +11,10 @@ export enum NotificationType {
   Warning = 'warning'
 }
 
-export enum NotificationBehavior {
-  Default = '',
+export enum NotificationMode {
   Collapsed = 'collapsed',
-  Expandable = 'expandable'
+  Expandable = 'expandable',
+  Expanded = 'expanded'
 }
 export interface INotification {
   readonly id: string
@@ -27,7 +27,7 @@ export interface INotification {
 
 export type NotificationProps = {
   id: string
-  behavior?: NotificationBehavior
+  mode?: NotificationMode
   type?: string
   progress?: number
   icon?: string
@@ -57,10 +57,10 @@ export class Notification extends Component<NotificationProps> {
 
   render(): ReactNode {
     const { progress, children, icon, type } = this.props
-    const { behavior = NotificationBehavior.Default } = this.props
+    const { mode: behavior = NotificationMode.Expanded } = this.props
     return (
       <div className={`notification ${type} ${behavior}`.trimRight()} onClick={this.handleClick}>
-        {behavior !== NotificationBehavior.Collapsed && (
+        {behavior !== NotificationMode.Collapsed && (
           <div className="content">
             <div className="body" role="alert">
               {children}

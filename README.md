@@ -20,7 +20,7 @@ Needed dependency free, performant notification system that wouldn't choke the b
 
 ### What problem does it solves?
 
-Vast majority of packages out there is based on js timers (`setTimeout` or `setInterval`) often being created per displayed notification. While it might not be a problem for small apps with fewer notifications, it has a significant impact on JS thread while running in high performance application with high volume of displayed notification.
+Vast majority of packages out there is based on js timers (`setTimeout` or `setInterval`) often being created per displayed notification. Whilst it might not be a problem for small apps with fewer notifications, it has a significant impact on JS thread when running in high performance application with high volume of displayed notification.
 
 ### Should you use it?
 

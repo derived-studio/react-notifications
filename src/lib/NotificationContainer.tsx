@@ -1,13 +1,13 @@
 import React, { Component, ReactNode } from 'react'
 
 import { Notification } from './Notification'
-import { INotification, NotificationBehavior } from './Notification'
+import { INotification, NotificationMode } from './Notification'
 
 import './notificationContainer.scss'
 
 export type NotificationContainerProps = {
   notifications: INotification[]
-  behavior?: NotificationBehavior
+  mode?: NotificationMode
   iconMap?: Record<string, string>
   className?: string
   onClick?: (id: string) => void
@@ -35,7 +35,7 @@ export class NotificationContainer extends Component<NotificationContainerProps>
         progress={progress}
         icon={icon}
         onClick={this.handleClick}
-        behavior={this.props.behavior}
+        mode={this.props.mode}
       >
         {message}
       </Notification>

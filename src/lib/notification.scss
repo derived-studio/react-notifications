@@ -104,6 +104,7 @@ $borderRadius: 5px;
     }
   }
 
+  &.expanded,
   &.expandable:hover {
     > .content {
       display: flex;
