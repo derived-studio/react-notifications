@@ -1,0 +1,38 @@
+@import '../../lib/notification.scss';
+
+@mixin buttonTypeStyle($type, $color, $colorHover) {
+  &.#{$type} {
+    background-color: $color;
+
+    &:hover {
+      background-color: $colorHover;
+    }
+  }
+}
+
+.button {
+  color: $text;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: $default;
+  border: $border;
+  border-radius: $borderRadius;
+  font-size: 1em;
+  margin: 5px;
+
+  &:hover {
+    background-color: $defaultHover;
+  }
+
+  :disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @include buttonTypeStyle('default', $default, $defaultHover);
+  @include buttonTypeStyle('info', $info, $infoHover);
+  @include buttonTypeStyle('error', $error, $errorHover);
+  @include buttonTypeStyle('success', $success, $successHover);
+  @include buttonTypeStyle('warning', $warning, $warningHover);
+}

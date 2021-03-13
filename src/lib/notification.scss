@@ -60,7 +60,7 @@ $borderRadius: 5px;
   }
 }
 
-@mixin typeStyle($type, $color, $colorHover) {
+@mixin styleNotificationType($type, $color, $colorHover) {
   &.#{$type} {
     > .icon {
       background-color: $color;
@@ -172,9 +172,9 @@ $borderRadius: 5px;
     }
   }
 
-  @include typeStyle('default', $default, $defaultHover);
-  @include typeStyle('info', $info, $infoHover);
-  @include typeStyle('error', $error, $errorHover);
-  @include typeStyle('success', $success, $successHover);
-  @include typeStyle('warning', $warning, $warningHover);
+  @include styleNotificationType('default', $default, $defaultHover);
+  @include styleNotificationType('info', $info, $infoHover);
+  @include styleNotificationType('error', $error, $errorHover);
+  @include styleNotificationType('success', $success, $successHover);
+  @include styleNotificationType('warning', $warning, $warningHover);
 }

@@ -42,5 +42,5 @@ export function NotificationManager(): JSX.Element {
     timer.start()
   }, [])
 
-  return <div>m</div>
+  return <></>
 }

@@ -14,8 +14,16 @@ export function App(): JSX.Element {
   return (
     <NotificationContextProvider timer={new Timer({ fps: 10 })} notifications={notifications}>
       <NotificationContainer mode={NotificationMode.Expandable} />
-      <NotificationManager />
-      <NotificationButtons />
+      <div className="layout">
+        <h1>React notifications</h1>
+        <h2>@derived/react-notifications</h2>
+        Installation
+        <code className="block">yarn add @derived/react-notifications</code>
+        or
+        <code className="block">npm i @derived/react-notifications</code>
+        <NotificationManager />
+        <NotificationButtons />
+      </div>
     </NotificationContextProvider>
   )
 }

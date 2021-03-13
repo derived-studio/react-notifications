@@ -9,6 +9,11 @@
 - Added notification render mode animations.
 - Made notification unselectable by default.
 
+### Examples
+
+- Additional styling
+- Added a button for each notification type
+
 ### Development
 
 - VSCode formatting config for TypeScript.
