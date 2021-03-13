@@ -80,6 +80,7 @@ $borderRadius: 5px;
 }
 
 .notification {
+  user-select: none;
   font-size: 1em;
   clear: both;
   display: flex;

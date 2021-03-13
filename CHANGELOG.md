@@ -7,6 +7,7 @@
 ### Styling
 
 - Added notification render mode animations.
+- Made notification unselectable by default.
 
 ### Development
 
