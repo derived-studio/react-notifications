@@ -36,16 +36,20 @@ $borderRadius: 5px;
     transform: translateY($dropDistance) scale(0);
     opacity: 0;
   }
+
   10% {
     transform: translateY($dropDistance) scale(1.2);
     opacity: 1;
   }
+
   20% {
     transform: translateY($dropDistance) scale(1);
   }
+
   90% {
     transform: translateY(6px);
   }
+
   100% {
     transform: translateY(0);
   }
