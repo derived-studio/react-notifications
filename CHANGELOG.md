@@ -4,6 +4,10 @@
 
 ## Unreleased
 
+### Styling
+
+- Added notification render mode animations.
+
 ### Development
 
 - VSCode formatting config for TypeScript.
