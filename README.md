@@ -4,38 +4,58 @@
 
 # React notifications
 
-Tiny Notification library for React build for speed.
+Tiny notification library for React build for speed.
+
+📋 [Release notes](https://github.com/derived-studio/react-notifications/blob/main/CHANGELOG.md)
+·
+📢 [Issues and requests](https://github.com/derived-studio/react-notifications/issues)
 
 > 🔨🔨🔨 WORK IN PROGRESS 🔨🔨🔨
 
-## Why another notification library?
+## Motivation
 
-Needed fast notification system that wouldn't choke the browser when run with large amount of notifications.
+### Why another notification library?
 
-## Design objectives
+Needed dependency free, performant notification system that wouldn't choke the browser when run with large amount of notifications.
 
-- [x] Blazing fast (supports large amount of notifications)
-- [x] Doesn't use `setTimeout` or `setInterval`
-- [x] Build with TypeScript (types included)
-- [x] Single peer dependency `react`
-- [x] Solid code coverage
-- [x] Styling with SASS
-- [x] Minimal footprint
+### What problem does it solves?
+
+Vast majority of packages out there is based on js timers (`setTimeout` or `setInterval`) often being created per displayed notification. While it might not be a problem for small apps with fewer notifications, it has a significant impact on JS thread while running in high performance application with high volume of displayed notification.
+
+### Should you use it?
+
+If you don't care about FPS, then DON'T.  
+There are really good and popular packages out there.
 
 ## Features
 
-- [x] Supports (but doesn't require) redux store
+### ⚡ Performance
+
+- [x] Supports large amount of notifications
+- [x] Doesn't use `setTimeout` or `setInterval`
+- [x] Comes with custom internal timer based on `requestAnimationFrame()`
 - [x] Configurable refresh (rate based on desired FPS)
-- [x] Comes with timer based on `requestAnimationFrame`
+- [ ] GPU based CSS animation (in progress)
+
+### 🎁 ...and more
+
+- [x] Small footprint (~3.2KB)
+- [x] Build with TypeScript (types included)
+- [x] Single peer dependency: `react`
+- [x] Supports (but doesn't require) redux store
+- [x] Solid test coverage
+- [x] Styled with SASS
 - [x] No singletons
 
-## What's next?
+### What's next?
 
-- [ ] Usage example code
-- [ ] Usage example docs
-- [ ] Documentation published to Github pages
-- [ ] Stackable notifications
-- [ ] Animations
+- [ ] Usage examples
+  - [ ] Using with React context
+  - [ ] Using with Redux
+- [ ] Usage documentation available on Github Pages
+<!--
+- [ ] Stackable notifications might not happen
+      -->
 
 ## Installation
 

@@ -2,9 +2,12 @@
 
 <!-- ## Unreleased -->
 
+## Unreleased
+
 ### Docs
 
 - Added basic package badges.
+- Rationale section.
 
 ## 0.5.2
 
