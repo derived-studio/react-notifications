@@ -4,6 +4,10 @@
 
 ## Unreleased
 
+### Development
+
+- VSCode formatting config for TypeScript.
+
 ### Docs
 
 - Added basic package badges.
