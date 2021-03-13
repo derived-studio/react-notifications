@@ -1,6 +1,10 @@
-# React notifier
+[![npm version](https://badgen.net/npm/v/@derived/react-notifications)](https://www.npmjs.com/package/@derived/react-notifications)
+[![Minified & Gzipped size](https://badgen.net/bundlephobia/minzip/@derived/react-notifications)](https://bundlephobia.com/result?p=@derived/react-notifications)
+[![npm](https://img.shields.io/npm/dm/@derived/react-notifications)](https://www.npmjs.com/package/@derived/react-notifications)
 
-Notification library for React build for speed.
+# React notifications
+
+Tiny Notification library for React build for speed.
 
 > 🔨🔨🔨 WORK IN PROGRESS 🔨🔨🔨
 

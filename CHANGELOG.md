@@ -2,9 +2,13 @@
 
 <!-- ## Unreleased -->
 
+### Docs
+
+- Added basic package badges.
+
 ## 0.5.2
 
-### Example fixes
+### Dev App fixes
 
 - Fixed referencing state
 - Fixed performance issue
