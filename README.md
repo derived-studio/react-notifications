@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b3b67e950d3d40189b94d32bd5c346c5)](https://app.codacy.com/gh/derived-studio/react-notifications?utm_source=github.com&utm_medium=referral&utm_content=derived-studio/react-notifications&utm_campaign=Badge_Grade_Settings)
 [![dependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg)](https://david-dm.org/derived-studio/react-notifications)
 [![devDependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg?type=dev)](https://david-dm.org/derived-studio/react-notifications?type=dev)
 [![peerDependencies Status](https://status.david-dm.org/gh/derived-studio/react-notifications.svg?type=peer)](https://david-dm.org/derived-studio/react-notifications?type=peer)  
