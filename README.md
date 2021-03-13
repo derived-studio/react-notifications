@@ -60,6 +60,7 @@ There are really good and popular packages out there.
   - [ ] Using with React context
   - [ ] Using with Redux
 - [ ] Usage documentation available on Github Pages
+
 <!--
 - [ ] Stackable notifications might not happen
       -->
