@@ -24,6 +24,7 @@
 - Refactoring: Moved notification types to Notification component.
 - Added `NotificationMode` - notification render mode.
 - Added github corner link.
+- Added style linting rules
 
 ### Documentation
 
