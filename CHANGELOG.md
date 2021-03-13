@@ -7,7 +7,7 @@
 ### Development
 
 - VSCode formatting config for TypeScript.
-- Added `NotificationIcon`.
+- Added `NotificationIcon` component.
 
 ### Docs
 

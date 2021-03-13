@@ -5,7 +5,6 @@ export type NotificationIconProps = {
 }
 
 export const NotificationIcon: FC<NotificationIconProps> = ({ icon }) => {
-  console.log('>', icon, icon?.length, icon?.[0], icon?.[1])
   if (!icon) {
     return null
   }
