@@ -23,6 +23,7 @@
 - Added `NotificationIcon` component.
 - Refactoring: Moved notification types to Notification component.
 - Added `NotificationMode` - notification render mode.
+- Added github corner link.
 
 ### Documentation
 

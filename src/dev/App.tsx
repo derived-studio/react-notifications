@@ -1,4 +1,5 @@
 import React from 'react'
+import GithubCorner from 'react-github-corner'
 import { Timer } from '../lib/Timer'
 import { NotificationContextProvider } from '../lib/notificationContext'
 import { randomizeNotifications } from './notificationFactory'
@@ -23,6 +24,7 @@ export function App(): JSX.Element {
         <NotificationContainer />
         <NotificationManager />
         <NotificationButtons />
+        <GithubCorner href="https://github.com/derived-studio/react-notifications" />
       </div>
     </NotificationContextProvider>
   )

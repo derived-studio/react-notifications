@@ -34,6 +34,7 @@ export const NotificationContainer: FC = () => {
       <div>
         <div>
           <h2>Container types</h2>
+          <p>Render few notifications first.</p>
           {modes.map(renderModeButton)}
         </div>
       </div>
