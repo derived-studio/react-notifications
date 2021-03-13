@@ -12,6 +12,9 @@
 ### Examples
 
 - Additional styling
+- Updated container types section
+- Added a button for each notification type
+- Added notification types section
 - Added a button for each notification type
 
 ### Development
