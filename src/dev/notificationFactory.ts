@@ -1,6 +1,5 @@
-import { INotification, NotificationType } from '../lib/notification.types'
 import { createNotificationFactory, NotificationOverrides } from '../lib/createNotification'
-import { Notification } from '../lib/Notification'
+import { INotification, Notification, NotificationType } from '../lib/Notification'
 
 export const createNotification = createNotificationFactory({
   generate: () => `${Date.now()}-${Math.round(Math.random() * 1e6)}`,

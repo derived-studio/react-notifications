@@ -1,5 +1,5 @@
 import React, { ComponentType, createContext, ReactElement, ReactNode, useContext, useReducer } from 'react'
-import { INotification } from './notification.types'
+import { INotification } from './Notification'
 import { Action, notificationsReducer } from './state'
 import type { Timer } from './Timer'
 

@@ -51,6 +51,15 @@ $borderRadius: 5px;
   }
 }
 
+@keyframes contentAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @mixin typeStyle($type, $color, $colorHover) {
   &.#{$type} {
     > .icon {
@@ -71,19 +80,43 @@ $borderRadius: 5px;
 }
 
 .notification {
-  min-width: 200px;
+  // min-width: 200px;
   font-size: 1em;
   clear: both;
   display: flex;
   // flex-direction: row-reverse;
   animation: notificationAnimation 1.4s ease-in-out;
+  overflow: visible;
 
   align-items: center;
   align-content: center;
+  justify-content: flex-end;
+
   margin: 2px;
   cursor: pointer;
 
+  &.expandable,
+  &.collapsed {
+    // min-width: unset;
+    > .content {
+      // visibility: hidden;
+      display: none;
+    }
+  }
+
+  &.expandable:hover {
+    > .content {
+      display: flex;
+    }
+    > .content + .icon {
+      transform: translateX(-8px);
+    }
+  }
+
   > .icon {
+    transform: translateX(0);
+    transition: transform 0.25s;
+    display: flex;
     color: $icon;
     background-color: $default;
     position: relative;
@@ -98,7 +131,6 @@ $borderRadius: 5px;
     flex: 0;
     width: 32px;
     height: 32px;
-    display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -107,22 +139,22 @@ $borderRadius: 5px;
       font-size: 22px;
     }
   }
-  > .content + .icon {
-    transform: translateX(-8px);
-  }
 
   > .content {
+    animation: contentAnimation 0.3s ease-in-out;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.3s;
     position: relative;
     margin: 0;
     flex: 1;
     background-color: $default;
     border: $border;
     border-radius: $borderRadius;
-    overflow: hidden;
 
     > .progress {
       display: flex;
-      justify-content: flex-end;
+      // justify-content: flex-end;
       background-color: $progressBG;
 
       > div {

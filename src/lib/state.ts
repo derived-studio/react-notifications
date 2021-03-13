@@ -1,4 +1,4 @@
-import { INotification } from './notification.types'
+import { INotification } from './Notification'
 
 export type Action<TPayload = unknown> = { type: string; payload: TPayload }
 export interface ActionCreator<TPayload> {

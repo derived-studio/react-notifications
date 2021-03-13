@@ -1,10 +1,14 @@
 import React, { FC } from 'react'
 import { useNotifications } from '../../lib/notificationContext'
-import { NotificationContainer } from '../../lib/NotificationContainer'
+import { NotificationContainer as DefaultContainer } from '../../lib/NotificationContainer'
 import { defaultIcons } from '../../lib/notificationIcons'
 import { removeNotification } from '../../lib/state'
+import { NotificationBehavior } from '../../lib/Notification'
 
-export const Notifications: FC = () => {
+export type NotificationContainerProps = {
+  behavior: NotificationBehavior
+}
+export const NotificationContainer: FC<NotificationContainerProps> = ({ behavior }) => {
   const { dispatch, notifications } = useNotifications()
 
   const onClick = (notificationId: string) => {
@@ -12,7 +16,8 @@ export const Notifications: FC = () => {
   }
 
   return (
-    <NotificationContainer
+    <DefaultContainer
+      behavior={behavior}
       notifications={notifications}
       onClick={onClick}
       className="bottom right"

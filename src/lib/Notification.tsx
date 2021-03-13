@@ -1,7 +1,39 @@
 import React, { Component, ReactNode } from 'react'
-import { NotificationProps, NotificationType } from './notification.types'
 
 import './notification.scss'
+import { NotificationIcon } from './NotificationIcon'
+
+export enum NotificationType {
+  Default = 'default',
+  Info = 'info',
+  Error = 'error',
+  Success = 'success',
+  Warning = 'warning'
+}
+
+export enum NotificationBehavior {
+  Default = '',
+  Collapsed = 'collapsed',
+  Expandable = 'expandable'
+}
+export interface INotification {
+  readonly id: string
+  readonly created: number
+  type: NotificationType
+  message: string
+  progress?: number
+  icon?: string
+}
+
+export type NotificationProps = {
+  id: string
+  behavior?: NotificationBehavior
+  type?: string
+  progress?: number
+  icon?: string
+  children: ReactNode
+  onClick?: (id: string) => void
+}
 
 export class Notification extends Component<NotificationProps> {
   public static types: string[] = Object.keys(NotificationType)
@@ -25,19 +57,22 @@ export class Notification extends Component<NotificationProps> {
 
   render(): ReactNode {
     const { progress, children, icon, type } = this.props
+    const { behavior = NotificationBehavior.Default } = this.props
     return (
-      <div className={`notification ${type}`.trimRight()} onClick={this.handleClick}>
-        <div className="content">
-          <div className="body" role="alert">
-            {children}
-          </div>
-          {this.isNumber(progress) && (
-            <div className="progress">
-              <div style={{ width: `${progress * 100}%` }}></div>
+      <div className={`notification ${type} ${behavior}`.trimRight()} onClick={this.handleClick}>
+        {behavior !== NotificationBehavior.Collapsed && (
+          <div className="content">
+            <div className="body" role="alert">
+              {children}
             </div>
-          )}
-        </div>
-        {icon && <div className="icon">{icon.length === 1 ? <span>{icon}</span> : <img src={icon} />}</div>}
+            {this.isNumber(progress) && (
+              <div className="progress">
+                <div style={{ width: `${progress * 100}%` }}></div>
+              </div>
+            )}
+          </div>
+        )}
+        <NotificationIcon icon={icon} />
       </div>
     )
   }

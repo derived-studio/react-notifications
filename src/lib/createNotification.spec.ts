@@ -1,6 +1,6 @@
 import { createNotificationFactory } from './createNotification'
 import { createTestNotification } from './notification.mocks'
-import { NotificationType } from './notification.types'
+import { NotificationType } from './Notification'
 
 describe('create notification factory', () => {
   it('creates notification with default type', () => {

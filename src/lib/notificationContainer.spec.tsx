@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { NotificationContainer } from './NotificationContainer'
 import { createTestNotification } from './notification.mocks'
-import { NotificationType } from './notification.types'
+import { NotificationType } from './Notification'
 
 describe('Notification container', () => {
   it('renders empty by default', () => {

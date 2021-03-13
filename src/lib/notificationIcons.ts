@@ -1,4 +1,4 @@
-import { NotificationType } from './notification.types'
+import { NotificationType } from './Notification'
 
 export const defaultIcons = {
   [NotificationType.Default]: '#',

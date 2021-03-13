@@ -1,4 +1,4 @@
-import { INotification, NotificationType } from './notification.types'
+import { INotification, NotificationType } from './Notification'
 
 export type NotificationOverrides = Partial<INotification> & Pick<INotification, 'message'>
 export type CreateNotification = (overrides: NotificationOverrides) => INotification

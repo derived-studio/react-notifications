@@ -1,7 +1,6 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { Notification } from './Notification'
-import { NotificationType } from './notification.types'
+import { Notification, NotificationType } from './Notification'
 import { createTestNotification } from './notification.mocks'
 
 describe('Notification', () => {
