@@ -48,8 +48,8 @@ There are really good and popular packages out there.
 - [x] Single peer dependency: `react`
 - [x] Notification container included
 - [x] Comes with state management
-- [x] Supports Redux usage
-- [x] Supports Context usage
+  - [x] Supports Redux usage
+  - [x] Supports Context usage
 - [x] Solid test coverage
 - [x] Styled with SASS
 - [x] No singletons
