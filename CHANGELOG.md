@@ -16,6 +16,7 @@
 - Added a button for each notification type
 - Added notification types section
 - Added a button for each notification type
+- Improved example styling
 
 ### Development
 
