@@ -25,7 +25,7 @@ export const NotificationButtons: FC = () => {
   return (
     <div>
       <h2>Notification types</h2>
-      {types.map(renderNotificationButton)}
+      <div className="row spaced">{types.map(renderNotificationButton)}</div>
     </div>
   )
 }

@@ -6,8 +6,6 @@ import { removeNotification } from '../../lib/state'
 import { NotificationMode } from '../../lib/Notification'
 import { Button } from './Button'
 
-const modes = [NotificationMode.Expanded, NotificationMode.Expandable, NotificationMode.Collapsed]
-
 export const NotificationContainer: FC = () => {
   const { dispatch, notifications } = useNotifications()
   const [mode, setMode] = useState(NotificationMode.Expanded)
@@ -17,8 +15,8 @@ export const NotificationContainer: FC = () => {
   }
 
   const renderModeButton = (type: NotificationMode): ReactNode => (
-    <Button key={type} onClick={() => setMode(type)} className={type}>
-      Switch to {type} mode.
+    <Button key={type} onClick={() => setMode(type)} className={`${type} block`}>
+      Use {type} mode.
     </Button>
   )
 
@@ -31,13 +29,28 @@ export const NotificationContainer: FC = () => {
         className="bottom right"
         iconMap={defaultIcons}
       />
-      <div>
-        <div>
-          <h2>Container types</h2>
-          <p>Render few notifications first.</p>
-          {modes.map(renderModeButton)}
+      <>
+        <h2>Container types</h2>
+        <div className="row">
+          <div className="col-3">
+            <h3>Expanded</h3>
+            <p>MEssage always visible.</p>
+            {renderModeButton(NotificationMode.Expanded)}
+          </div>
+
+          <div className="col-3">
+            <h3>Expandable</h3>
+            <p>Message visible on hover.</p>
+            {renderModeButton(NotificationMode.Expandable)}
+          </div>
+
+          <div className="col-3">
+            <h3>Collapsed</h3>
+            <p>Message always hidden.</p>
+            {renderModeButton(NotificationMode.Collapsed)}
+          </div>
         </div>
-      </div>
+      </>
     </div>
   )
 }

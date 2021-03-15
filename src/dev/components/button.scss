@@ -12,22 +12,31 @@
 
 .button {
   color: $text;
-  padding: 6px 12px;
+  padding: 14px 28px;
   cursor: pointer;
   background-color: $default;
   border: $border;
   border-radius: $borderRadius;
   font-size: 1em;
-  margin: 5px;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.8em;
 
   &:hover {
     background-color: $defaultHover;
   }
 
-  :disabled {
+  &:disabled {
     pointer-events: none;
     opacity: 0.5;
     cursor: default;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
   }
 
   @include buttonTypeStyle('default', $default, $defaultHover);
