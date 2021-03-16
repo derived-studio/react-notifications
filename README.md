@@ -78,6 +78,6 @@ yarn add @derived/react-notification
 ## Development
 
 1. Clone your forked repository.
-2. Run `yarn` to install dev dependencies and setup githooks.
+2. Run `yarn` to install dev dependencies and setup git hooks.
 3. Start server with `yarn dev`.
 4. Have fun!
