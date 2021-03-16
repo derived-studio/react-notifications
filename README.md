@@ -35,11 +35,11 @@ There are really good and popular packages out there.
 
 ### ⚡ Performance
 
-- [x] Supports large amount of notifications
-- [x] Doesn't use `setTimeout` or `setInterval`
-- [x] Comes with custom internal timer based on `requestAnimationFrame()`
-- [x] Configurable refresh rate (based on desired FPS)
-- [ ] GPU based CSS animation (in progress)
+- [x] Sustained high performance for large amount of notifications
+- [x] Internal timer is based on `requestAnimationFrame()`
+- [x] Timer with configurable (throttled) refresh rate based on desired FPS
+- [x] No use of `setTimeout` or `setInterval`
+- [x] GPU based CSS animation (in progress)
 
 ### 🎁 ...and more
 
@@ -48,8 +48,8 @@ There are really good and popular packages out there.
 - [x] Single peer dependency: `react`
 - [x] Notification container included
 - [x] Comes with state management
-  - [x] Supports Redux usage
-  - [x] Supports Context usage
+  - [x] Supports React Context
+  - [x] Can easily be used with Redux
 - [x] Solid test coverage
 - [x] Styled with SASS
 - [x] No singletons
@@ -60,10 +60,6 @@ There are really good and popular packages out there.
   - [ ] Using with React context
   - [ ] Using with Redux
 - [ ] Usage documentation available on Github Pages
-
-<!--
-- [ ] Stackable notifications might not happen
-      -->
 
 ## Installation
 
@@ -84,5 +80,4 @@ yarn add @derived/react-notification
 1. Clone your forked repository.
 2. Run `yarn` to install dev dependencies and setup githooks.
 3. Start server with `yarn dev`.
-
-Have fun!
+4. Have fun!
