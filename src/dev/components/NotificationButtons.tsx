@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { addNotification } from '../../lib/state'
 import { NotificationMode, NotificationType } from '../../lib/Notification'
 import { useNotifications } from '../../lib/notificationContext'
