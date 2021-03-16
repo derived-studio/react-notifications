@@ -57,7 +57,7 @@ There are really good and popular packages out there.
 ### What's next?
 
 - [ ] Usage examples
-  - [ ] Using with React context
+  - [x] Using with React context
   - [ ] Using with Redux
 - [ ] Usage documentation available on Github Pages
 
