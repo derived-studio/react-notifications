@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { removeNotification, updateNotification } from '../../lib/state'
 import { useNotifications } from '../../lib/notificationContext'
 
