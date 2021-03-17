@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react'
+import { isNumber } from './guards'
 
 import './notification.scss'
 import { NotificationIcon } from './NotificationIcon'
@@ -45,10 +46,6 @@ export class Notification extends Component<NotificationProps> {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  private isNumber(val: unknown): val is number {
-    return true
-  }
-
   private handleClick(): void {
     if (this.props.onClick) {
       this.props.onClick(this.props.id)
@@ -65,7 +62,7 @@ export class Notification extends Component<NotificationProps> {
             <div className="body" role="alert">
               {children}
             </div>
-            {this.isNumber(progress) && (
+            {isNumber(progress) && (
               <div className="progress">
                 <div style={{ width: `${progress * 100}%` }}></div>
               </div>
