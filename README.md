@@ -56,10 +56,16 @@ There are really good and popular packages out there.
 
 ### What's next?
 
+- [ ] Move notification mode from notification to container
+- [ ] Dismiss effect (and dismissed notification property)
+- [ ] Redux support
+  - [ ] Generic action creators
+  - [x] Action creators follow FSA
+  - [x] Reusable reducer
 - [ ] Usage examples
   - [x] Using with React context
   - [ ] Using with Redux
-- [ ] Usage documentation available on Github Pages
+- [ ] Usage documentation published to Github Pages
 
 ## Installation
 

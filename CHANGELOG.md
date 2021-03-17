@@ -1,6 +1,12 @@
 # CHANGELOG
 
-<!-- ## Unreleased -->
+<!--
+## Unreleased
+-->
+
+## Unreleased
+
+- Updated documentation
 
 ## 0.6.0
 
