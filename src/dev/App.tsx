@@ -11,11 +11,10 @@ import './app.scss'
 import { NotificationMode } from '../lib/Notification'
 
 export function App(): JSX.Element {
-  const notifications = randomizeNotifications(20)
   const [mode, setMode] = useState(NotificationMode.Expanded)
 
   return (
-    <NotificationContextProvider timer={new Timer({ fps: 10 })} notifications={notifications}>
+    <NotificationContextProvider timer={new Timer({ fps: 10 })} notifications={randomizeNotifications(0)}>
       <div className="layout">
         <h1>React notifications</h1>
         <h3>@derived/react-notifications</h3>
