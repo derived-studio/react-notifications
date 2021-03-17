@@ -14,20 +14,20 @@
     "strictNullChecks": false,
     "sourceMap": true,
     "maxNodeModuleJsDepth": 0,
-    "module": "es6",
 
     "jsx": "react",
+    "module": "es6",
     "moduleResolution": "node",
 
     "removeComments": true,
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "target": "es2015",
+    "target": "es5",
     "outDir": "dist"
   },
 
-  "include": ["./src/**/*.ts", "./src/**/*.tsx", "global.d.ts"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "global.d.ts"], // "src/dev/App.tsx"
   "exclude": [
     "./src/**/*.js",
     "./node_modules",

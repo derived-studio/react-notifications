@@ -6,6 +6,7 @@
 
 ## Unreleased
 
+- **IMPORTANT:** Fixed build exports.
 - Updated documentation
 
 ## 0.6.0
