@@ -3,8 +3,8 @@
   display: flex;
   height: 100vh;
   flex-direction: column;
-  // min-width: 15em;
   width: auto;
+  pointer-events: none;
 
   //
   // > .filter {

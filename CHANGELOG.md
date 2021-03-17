@@ -18,7 +18,7 @@
 - Added a button for each notification type
 - Improved example styling
 
-### Development
+### Changes
 
 - VSCode formatting config for TypeScript.
 - Added `NotificationIcon` component.
@@ -26,6 +26,10 @@
 - Added `NotificationMode` - notification render mode.
 - Added github corner link.
 - Added style linting rules.
+
+### Fixes
+
+- Fix. Prevented container from triggering pointer events.
 
 ### Documentation
 

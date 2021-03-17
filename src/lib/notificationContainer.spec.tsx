@@ -31,6 +31,15 @@ describe('Notification container', () => {
     })
   })
 
+  it("container doesn't trigger pointer events", () => {
+    const onClick = jest.fn()
+    const { container } = render(<NotificationContainer {...{ onClick, notifications: [] }} />)
+    const element = container.firstChild
+
+    fireEvent.click(element)
+    expect(onClick).not.toHaveBeenCalled()
+  })
+
   it('forwards onclick handler to rendered notification', () => {
     const id = 'test-notification-id'
     const message = 'test notification'
