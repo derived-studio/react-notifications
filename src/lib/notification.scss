@@ -101,9 +101,7 @@ $borderRadius: 5px;
 
   &.expandable,
   &.collapsed {
-    // min-width: unset;
     > .content {
-      // visibility: hidden;
       display: none;
     }
   }
