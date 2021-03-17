@@ -27,7 +27,7 @@
     "outDir": "dist"
   },
 
-  "include": ["./src/**/*.ts", "./src/**/*.tsx", "global.d.ts"], // "src/dev/App.tsx"
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "global.d.ts"],
   "exclude": [
     "./src/**/*.js",
     "./node_modules",
