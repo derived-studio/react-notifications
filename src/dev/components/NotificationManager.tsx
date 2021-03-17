@@ -33,7 +33,7 @@ export function NotificationManager(): JSX.Element {
         }
 
         if (notification.progress !== progress) {
-          dispatch(updateNotification({ ...notification, progress: 0.5 }))
+          dispatch(updateNotification({ ...notification, progress }))
         }
       })
     }
