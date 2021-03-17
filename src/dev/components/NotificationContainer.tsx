@@ -14,11 +14,17 @@ export const NotificationContainer: FC = () => {
     dispatch(removeNotification(notificationId))
   }
 
-  const renderModeButton = (type: NotificationMode): ReactNode => (
-    <Button key={type} onClick={() => setMode(type)} className={`${type} block`}>
-      Use {type} mode.
-    </Button>
-  )
+  const renderModeButton = (fMode: NotificationMode): ReactNode => {
+    return (
+      <Button
+        key={fMode}
+        onClick={() => setMode(fMode)}
+        className={`${mode} ${mode === fMode ? 'active' : 'inactive'} block`}
+      >
+        Use {fMode} mode.
+      </Button>
+    )
+  }
 
   return (
     <div>
