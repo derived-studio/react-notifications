@@ -14,7 +14,7 @@ export function App(): JSX.Element {
   const [mode, setMode] = useState(NotificationMode.Expanded)
 
   return (
-    <NotificationContextProvider timer={new Timer({ fps: 10 })} notifications={randomizeNotifications(0)}>
+    <NotificationContextProvider timer={new Timer({ fps: 30 })} notifications={randomizeNotifications(10)}>
       <div className="layout">
         <h1>React notifications</h1>
         <h3>@derived/react-notifications</h3>
