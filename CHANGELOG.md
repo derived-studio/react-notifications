@@ -4,6 +4,14 @@
 ## Unreleased
 -->
 
+## Unreleased
+
+### Generic code cleanup
+
+### Refactoring
+
+- Removed redundant use of ref from notification container component.
+
 ## 0.7.0
 
 - **IMPORTANT:** Fixed build exports.

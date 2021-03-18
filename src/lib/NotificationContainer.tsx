@@ -14,8 +14,6 @@ export type NotificationContainerProps = {
 }
 
 export class NotificationContainer extends Component<NotificationContainerProps> {
-  private divRef: HTMLDivElement | null = null
-
   constructor(props: NotificationContainerProps) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -46,7 +44,7 @@ export class NotificationContainer extends Component<NotificationContainerProps>
     const { iconMap, className = '' } = this.props
     const notifications = [...this.props.notifications].reverse()
     return (
-      <div ref={(element) => (this.divRef = element)} className={`notification-container ${className}`.trim()}>
+      <div className={`notification-container ${className}`.trim()}>
         <div className="notifications">
           {notifications.map((notification) => {
             const { icon = iconMap ? iconMap[notification.type] : undefined } = notification
