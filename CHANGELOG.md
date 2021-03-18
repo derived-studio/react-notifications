@@ -4,6 +4,12 @@
 ## Unreleased
 -->
 
+## Unreleased
+
+### Fixes
+
+- Disabled mangling dist css files
+
 ## 0.7.1
 
 ### Styling
