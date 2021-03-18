@@ -6,7 +6,9 @@
 
 ## Unreleased
 
-### Generic code cleanup
+### Styling
+
+- Adjusted items alignment allowing varying notification width.
 
 ### Refactoring
 
