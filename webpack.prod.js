@@ -51,15 +51,15 @@ module.exports = {
             // Translates CSS into CommonJS
             loader: 'css-loader',
             options: {
-              modules: true,
-              sourceMap: true
+              modules: false,
+              sourceMap: false
             }
           },
           {
             // Compiles Sass to CSS
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
+              sourceMap: false,
               implementation: require('sass')
             }
           }
