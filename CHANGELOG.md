@@ -4,6 +4,12 @@
 ## Unreleased
 -->
 
+## 0.7.3
+
+### Styling
+
+- Added auto height to make notification progress compatible with bootstrap.
+
 ## 0.7.2
 
 ### Fixes
