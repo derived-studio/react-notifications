@@ -9,6 +9,7 @@
 ### Styling
 
 - Adjusted items alignment allowing varying notification width.
+- Fixed vertical item alignment to keep first added elements visible.
 
 ### Refactoring
 

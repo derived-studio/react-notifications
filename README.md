@@ -56,7 +56,6 @@ There are really good and popular packages out there.
 
 ### What's next?
 
-- [ ] Move notification mode from notification to container
 - [ ] Dismiss effect (and dismissed notification property)
 - [ ] Redux support
   - [ ] Generic action creators
