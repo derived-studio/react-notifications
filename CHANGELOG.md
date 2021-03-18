@@ -4,7 +4,7 @@
 ## Unreleased
 -->
 
-## Unreleased
+## 0.7.1
 
 ### Styling
 
