@@ -4,6 +4,10 @@
 ## Unreleased
 -->
 
+## 0.8.1
+
+- Added default icons to distribution package.
+
 ## 0.8.0
 
 - Added support for rich text messages via custom message renderer.
