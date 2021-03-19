@@ -71,4 +71,17 @@ describe('Notification container', () => {
     expect(elements[0].textContent).toBe(notifications[1].message)
     expect(elements[1].textContent).toBe(notifications[0].message)
   })
+
+  it('creates notification message with custom method', () => {
+    const message = '<span>Rich <b>text</b> notification<span>'
+    const notification = createTestNotification({ id: 'notification-one', message })
+
+    const renderMessage = (message: string) => <div dangerouslySetInnerHTML={{ __html: message }}></div>
+    const { getAllByRole } = render(
+      <NotificationContainer notifications={[notification]} renderMessage={renderMessage} />
+    )
+    const elements = getAllByRole('alert')
+    expect(elements).toHaveLength(1)
+    expect(elements[0].textContent).toEqual('Rich text notification')
+  })
 })

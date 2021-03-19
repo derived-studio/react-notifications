@@ -4,6 +4,10 @@
 ## Unreleased
 -->
 
+## 0.8.0
+
+- Added support for rich text messages via custom message renderer.
+
 ## 0.7.3
 
 ### Styling
@@ -14,7 +18,7 @@
 
 ### Fixes
 
-- Disabled mangling dist css files
+- Disabled mangling dist css files.
 
 ## 0.7.1
 

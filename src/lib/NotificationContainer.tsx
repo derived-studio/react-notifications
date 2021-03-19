@@ -11,6 +11,7 @@ export type NotificationContainerProps = {
   iconMap?: Record<string, string>
   className?: string
   onClick?: (id: string) => void
+  renderMessage?: (message: string) => ReactNode | string
 }
 
 export class NotificationContainer extends Component<NotificationContainerProps> {
@@ -25,6 +26,7 @@ export class NotificationContainer extends Component<NotificationContainerProps>
   }
 
   private renderNotification({ id, message, type, progress, icon }: INotification): ReactNode {
+    const { renderMessage } = this.props
     return (
       <Notification
         key={id}
@@ -35,7 +37,7 @@ export class NotificationContainer extends Component<NotificationContainerProps>
         onClick={this.handleClick}
         mode={this.props.mode}
       >
-        {message}
+        {renderMessage ? renderMessage(message) : message}
       </Notification>
     )
   }
