@@ -1,6 +1,6 @@
 {
   "name": "@derived/react-notifications",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Notification component for react apps.",
   "repository": {
     "type": "git",
