@@ -6,6 +6,10 @@
 
 ## 0.8.1
 
+- Cleaned up notification styles.
+
+## 0.8.1
+
 - Added default icons to distribution package.
 
 ## 0.8.0
