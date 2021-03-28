@@ -4,6 +4,10 @@
 ## Unreleased
 -->
 
+## Unreleased
+
+- Added subscribe method to the timer to prevent need for casting
+
 ## 0.8.1
 
 - Cleaned up notification styles.

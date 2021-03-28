@@ -42,6 +42,10 @@ export class Timer extends Observable<number> {
     return this._running
   }
 
+  subscribe(func: ISubscriber<number>): void {
+    super.subscribe(func)
+  }
+
   start(): void {
     this._running = true
     this._requestId = window.requestAnimationFrame(this.tick.bind(this))
